@@ -12,6 +12,7 @@ import Home from '../Pages/Home/Home';
 
 export default function EmpLinks() {
     return (
+        //this is the header styling//
         <div style={{
             backgroundColor: "darkgray",
             display: "flex",

@@ -1,0 +1,7 @@
+each component only holds a singular function.
+
+Be sure to name them specific enough to refer to but not too length.
+
+each component will be called into the page they belong to.
+
+the Pages file will call the each component
