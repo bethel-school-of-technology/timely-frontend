@@ -1,8 +1,4 @@
-import React, { Component } from 'react';
-/* import Login from './Login'; */
-import Register from './Register';
-import Values from './Values';
-import './App.css';
+
 
 class App extends Component {
   constructor(props) {
@@ -10,7 +6,9 @@ class App extends Component {
     this.state = { token: "", username: "", password: "", firstName: "", lastName: "", values: [], error: "" };
   }
 
-  /*  onLogin = () => {
+
+  //login fetch to database and giving of token
+  onLogin = () => {
     fetch("http://localhost:8080/login", {
     headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
     method: "POST",
@@ -25,8 +23,9 @@ class App extends Component {
       }
     });
   }
-  */
 
+
+  //Register page and posting data to database
   onRegister = () => {
     fetch("http://localhost:8080/api/user/register", {
     headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
@@ -43,11 +42,18 @@ class App extends Component {
     });
   }
 
+
+//code below is simplified by this code -- 
+      //  onChange = e => {
+      //  this.setState({ [e.target.id]: e.target.value });
+      //  }
   onUsernameChange = (e) => this.setState({ ...this.state, username: e.target.value });
   onPasswordChange = (e) => this.setState({ ...this.state, password: e.target.value });
   onFirstNameChange = (e) => this.setState({ ...this.state, firstName: e.target.value });
   onLastNameChange = (e) => this.setState({ ...this.state, lastName: e.target.value });
 
+
+// values page function
   onGetValues = () => {
     fetch("http://localhost:8080/api/values", {
       headers: { 'Authorization': this.state.token }
@@ -60,8 +66,11 @@ class App extends Component {
     return (
     <div className="App">
       <header className="App-header">
-      {(!this.state.token || this.state.token === "")
-        ? (<Register onUsernameChange={this.onUsernameChange}
+      {
+      //if then statement for how the token will determine path
+      (!this.state.token || this.state.token === "")
+        ? (<Register 
+        onUsernameChange={this.onUsernameChange}
         onPasswordChange={this.onPasswordChange}
         onFirstNameChange={this.onFirstNameChange}
         onLastNameChange={this.onLastNameChange}

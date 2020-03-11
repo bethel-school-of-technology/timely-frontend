@@ -23,8 +23,8 @@ class Register extends React.Component {
 
 
 //prevent default stops re-rendering of page
-    onSubmit = e => {
-        e.preventDefault();
+    onSubmit = s => {
+        s.preventDefault();
 
 
     const newUser = {
