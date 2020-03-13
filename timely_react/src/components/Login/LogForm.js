@@ -5,7 +5,7 @@ import Home from '../../Pages/Home/Home';
 
 import '../../Styles/Styles.scss';
 
-class Login extends React.Component {
+class LoginForm extends React.Component {
 
   //properties being passed to the backend
   //token for authorization, username and password for verification to recieve a token
@@ -118,8 +118,4 @@ class Login extends React.Component {
 }
 
 
-export default function LogForm() {
-  return (
-    <Login />
-  );
-}
+export default LoginForm;

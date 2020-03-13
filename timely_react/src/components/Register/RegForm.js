@@ -1,13 +1,14 @@
 import React from 'react';
 
 
-class Register extends React.Component {
+class RegForm extends React.Component {
 
     constructor() {
         super();
         this.state = {
             firstName: "",
             lastName: "",
+            username: "",
             company: "",
             email: "",
             password: "",
@@ -19,7 +20,14 @@ class Register extends React.Component {
         fetch("http://localhost:8080/register", {
             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
             method: "POST",
-            body: JSON.stringify({ username: this.state.username, password: this.state.password, firstName: this.state.firstName, lastName: this.state.lastName })
+            body: JSON.stringify({ 
+                firstName: this.state.firstName, 
+                lastName: this.state.lastName,
+                username: this.state.username,
+                company: this.state.company,
+                email: this.state.email,
+                password: this.state.password 
+                 })
         })
             .then(res => res.headers.get("authorization"))
             .then(token => {
@@ -46,6 +54,7 @@ class Register extends React.Component {
         const newUser = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
+            username: this.state.username,
             company: this.state.company,
             email: this.state.email,
             password: this.state.password,
@@ -92,6 +101,21 @@ class Register extends React.Component {
                             type="text"
                         />
                     </div>
+
+                    <div className="input-group">
+                        <label htmlFor="username">Username</label>
+
+                        <input className="login-input"
+                            name="username"
+                            placeholder="Username"
+                            onChange={this.onChange}
+                            value={this.state.username}
+                            error={errors.username}
+                            id="username"
+                            type="text"
+                        />
+                    </div>
+
 
                     <div className="input-group">
                         <label htmlFor="email">Email</label>
@@ -143,8 +167,4 @@ class Register extends React.Component {
         </div>
     }
 }
-export default function RegForm() {
-    return (
-        <Register />
-    );
-}
+export default RegForm;
