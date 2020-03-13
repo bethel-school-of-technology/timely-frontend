@@ -1,21 +1,25 @@
 import React from 'react';
 
 import RegLink from '../../Routes/link_Register';
-import LogForm from '../../components/Login/LogForm';
+import LoginForm from '../../components/Login/LogForm';
 
 
 
-export default function Login() {
-    return (
-    <div>
-    <div>
-    <LogForm/>
-    </div>
-    <br></br>
-    <br></br>
-    <div>
-    <RegLink/>
-    </div>
-    </div>
-    );
+class Login extends React.Component {
+    render() {
+        return (
+        <div>
+        <div>
+         <LoginForm uri="http://localhost:8080/login"/>
+        </div>
+            <br></br>
+            <br></br>
+        <div>
+            <RegLink/>
+        </div>
+        </div>
+        );
+    }
 }
+
+export default Login;

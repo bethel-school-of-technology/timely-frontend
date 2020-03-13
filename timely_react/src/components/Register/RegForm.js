@@ -9,7 +9,7 @@ class Register extends React.Component {
           firstName: "",
           lastName: "",
           company: "",
-          email: "",
+          username: "",
           password: "",
           errors: {}
         };
@@ -23,15 +23,17 @@ class Register extends React.Component {
 
 
 //prevent default stops re-rendering of page
-    onSubmit = s => {
-        s.preventDefault();
+    onSubmit = e => {
+        e.preventDefault();
 
 
+//we need to discuss the username and email use
+//does database have username and or email
     const newUser = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             company: this.state.company,
-            email: this.state.email,
+            username: this.state.username,
             password: this.state.password,
           };
 
@@ -78,16 +80,16 @@ class Register extends React.Component {
               </div>
 
     <div className="input-group">
-        <label htmlFor="email">Email</label>
+        <label htmlFor="username">Username</label>
 
             <input className="login-input"
-                name="email"
-                placeholder="Email"
+                name="username"
+                placeholder="Username"
                   onChange={this.onChange}
-                  value={this.state.email}
-                  error={errors.email}
-                  id="email"
-                  type="email"/>
+                  value={this.state.username}
+                  error={errors.username}
+                  id="username"
+                  type="text"/>
               </div>
 
 

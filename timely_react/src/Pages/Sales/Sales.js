@@ -9,7 +9,7 @@ export default function SalesPage() {
     return (
         <div>
         <SaLinks/>
-        <Sales/>
+        <Sales uri="http://localhost:8080/sales"/>
         </div>
     );
 }
