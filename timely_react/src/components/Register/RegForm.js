@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 class RegForm extends React.Component {
 
@@ -17,7 +17,7 @@ class RegForm extends React.Component {
     }
 
     onRegister = () => {
-        fetch("http://localhost:8080/register", {
+        fetch("http://localhost:8080/api/user/register", {
             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
             method: "POST",
             body: JSON.stringify({ 
@@ -158,9 +158,9 @@ class RegForm extends React.Component {
                             type="password" />
                     </div>
 
-                    <button
+                    <Link to="/login" className="login-btn"><button
                         className="login-btn"
-                        type="submit">Register</button>
+                        type="submit" onClick={this.onRegister}>Register</button></Link>
 
                 </form>
             </div>
