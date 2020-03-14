@@ -3,10 +3,9 @@ import { Switch, Route } from 'react-router-dom';
 
 //routing imports
 import Login from '../Pages/Login/Login';
-import Home from '../Pages/Home/Home';
-import Sales from '../Pages/Sales/Sales';
-import Schedule from '../Pages/Schedule/Schedule';
-import Employees from '../Pages/Employees/Employees';
+import HomePage from '../Pages/Home/Home';
+import SalesPage from '../Pages/Sales/Sales';
+import AddSales from '../Pages/AddSales/AddSales';
 import Register from '../Pages/Register/Register';
 
 
@@ -16,10 +15,9 @@ export default function Routes() {
         <Route path="/login" component={Login}  />
         
 
-        <Route path="/home" component={Home} />
-        <Route path="/employees" component={Employees} />
-        <Route path="/sales" component={Sales} />
-        <Route path="/schedule" component={Schedule} />
+        <Route path="/home" component={HomePage} />
+        <Route path="/sales" component={SalesPage} />
+        <Route path="/addSales" component={AddSales} />
         <Route path="/register" component={Register}/>
         <Route component={Login} />
     </Switch>

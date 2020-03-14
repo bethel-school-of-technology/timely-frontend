@@ -5,17 +5,21 @@ import RegForm from '../../components/Register/RegForm';
 
 
 
-export default function Register() {
-    return (
-        <div>
-        <div>
-        <RegForm uri="http://localhost:8080/register"/>
-        </div>
-        <br></br>
-        <br></br>
-        <div>
-        <LogLink/>
-        </div>
-        </div>
-    );
+class Register extends React.Component {
+    render() {
+        return (
+            <div>
+                <div>
+                    <RegForm uri="http://localhost:8080/register"/>
+                </div>
+            <br></br>
+            <br></br>
+                <div>
+                    <LogLink/>
+                </div>
+            </div>
+        );
+    }
 }
+
+export default Register;

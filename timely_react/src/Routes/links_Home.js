@@ -5,9 +5,8 @@ import {
   } from "react-router-dom";
 
 
-import Sales from '../Pages/Sales/Sales';
-import Schedule from '../Pages/Schedule/Schedule';
-import Employees from '../Pages/Employees/Employees'
+import SalesPage from '../Pages/Sales/Sales';
+import AddSales from '../Pages/AddSales/AddSales';
 
 
 export default function HomLinks() {
@@ -30,14 +29,16 @@ export default function HomLinks() {
             <nav><Link to="/sales">Sales</Link></nav>
             </button>
             <div>
-            <Route path="/sales" component={Sales} />
+            <Route path="/sales" component={SalesPage} />
             </div>
             </div>
+
+
 
             <div style={{
                 display: "flex",
                 justifyContent: "center"
-            }}>
+                        }}>
             <button style={{
                 fontSize: "3em",
                 width:"90%",
@@ -45,29 +46,12 @@ export default function HomLinks() {
                 borderRadius: "12px",
                 backgroundColor: "orange",
                 border: "4px solid grey",
-            }}>
-            <nav><Link to="/schedule">Schedule</Link></nav>
+                            }}>
+
+            <nav><Link to="/addSales">Add Sales</Link></nav>
             </button> 
             <div>
-            <Route path="/schedule" component={Schedule} />
-            </div>
-            </div>
-
-            <div style={{
-                display: "flex",
-                justifyContent: "center",
-            }}>
-            <button style={{
-                fontSize: "3em",
-                width:"90%",
-                borderRadius: "12px",
-                backgroundColor: "lightblue",
-                border: "4px solid grey",
-            }}>
-            <nav><Link to="/employees">Employees</Link></nav>
-            </button>
-            <div>
-            <Route path="/employees" component={Employees} />
+            <Route path="/addSales" component={AddSales} />
             </div>
         </div>
     </div>

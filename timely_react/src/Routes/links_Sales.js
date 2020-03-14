@@ -6,8 +6,7 @@ import {
 
 
 import Home from '../Pages/Home/Home';
-import Schedule from '../Pages/Schedule/Schedule';
-import Employees from '../Pages/Employees/Employees'
+import SalesPage from '../Pages/Sales/Sales';
 
 
 export default function SaLinks() {
@@ -37,22 +36,10 @@ export default function SaLinks() {
                 fontSize: "1.5em",
                 fontWeight: "bold"
             }}>
-            <nav><Link to="/schedule">Schedule</Link></nav>
+            <nav><Link to="/sales">Sales</Link></nav>
             </button>
             <div>
-                <Route path="/schedule" component={Schedule} />
-            </div>
-
-            <button style={{
-                backgroundColor: "skyblue",
-                width: "30%",
-                fontSize: "1.5em",
-                fontWeight: "bold"
-            }}>
-            <nav><Link to="/employees">Employees</Link></nav>
-            </button>
-            <div>
-                <Route path="/employees" component={Employees} />
+                <Route path="/sales" component={SalesPage} />
             </div>
             </div>
     );
