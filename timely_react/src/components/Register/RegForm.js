@@ -15,6 +15,7 @@ class RegForm extends React.Component {
             errors: {}
         };
     }
+    
 
     onRegister = () => {
         fetch("http://localhost:8080/api/user/register", {
@@ -67,8 +68,9 @@ class RegForm extends React.Component {
         const { errors } = this.state;
         return <div className="root-container">
             <div className="inner-container">
-                <div className="box-header">
-                    Register
+                <div className="box-header"> 
+                <br/>
+                <h1 style={{textAlign:'center',color:'#009688'}}>Register Here</h1>  <br/>
                 </div>
 
                 <form onSubmit={this.onSubmit}
@@ -103,7 +105,7 @@ class RegForm extends React.Component {
                     </div>
 
                     <div className="input-group">
-                        <label htmlFor="username">Username</label>
+                        <label htmlFor="username">UserName</label>
 
                         <input className="login-input"
                             name="username"

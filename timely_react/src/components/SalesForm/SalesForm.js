@@ -226,10 +226,9 @@ onPostSat = () => {
 
     render() {
         const { errors } = this.state;
-        return <div className="root-container">
-            <h1>
-            Input Weekly Sales
-        </h1>
+        return <div className="root-container"> 
+        
+           <h1 style={{ color: "#009688" }}>Input Daily Sales</h1>
         <br></br>
             <div className="inner-container">
                 <div className="box-header">
@@ -452,9 +451,7 @@ onPostSat = () => {
                             type="date"
                             />
                     </div>
-                    <br></br>
-
-
+                    
                         <button
                         className="login-btn"
                         type="submit" onClick={this.onClick}>Submit</button>

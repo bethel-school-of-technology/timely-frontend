@@ -15,7 +15,7 @@ export default function LogLink() {
 
     </div>
         <div>
-    <Route path="/login" component={Login} />
+    <Route path="/home" component={Login} />
         </div>
         </div>
     </div>
