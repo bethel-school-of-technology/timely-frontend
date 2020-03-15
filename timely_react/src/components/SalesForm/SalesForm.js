@@ -40,7 +40,7 @@ class SalesForm extends React.Component {
 
                 //READ THIS COMMENT PLEASE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //not sure how to export the data. there are 7 states, each holding two properties.         
-                sales:this.state
+                sales: this.state
                  })
         })
             .then(res => res.headers.get("authorization"))
@@ -65,6 +65,7 @@ class SalesForm extends React.Component {
     }
     //this function assigns the data from the state properties to fields on the database's sales model(weekDay, dailySales, etc)...I think :) -Rebekah
     onPostSun = () => {
+        //should we try putting all 7 fetch requests in one onPost function? -Rebekah
         fetch("http://localhost:8080/sales", {
             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
             method: "POST",
