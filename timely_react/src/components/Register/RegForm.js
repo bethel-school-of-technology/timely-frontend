@@ -6,7 +6,7 @@ class RegForm extends React.Component {
     constructor() {
         super();
         this.state = {
-            firstName: "",
+            firsT_Name: "",
             lastName: "",
             username: "",
             company: "",
@@ -21,7 +21,7 @@ class RegForm extends React.Component {
             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
             method: "POST",
             body: JSON.stringify({ 
-                firstName: this.state.firstName, 
+                firstName: this.state.firsT_Name, 
                 lastName: this.state.lastName,
                 username: this.state.username,
                 company: this.state.company,
@@ -52,7 +52,7 @@ class RegForm extends React.Component {
 
 
         const newUser = {
-            firstName: this.state.firstName,
+            firsT_Name: this.state.firsT_Name,
             lastName: this.state.lastName,
             username: this.state.username,
             company: this.state.company,
@@ -75,15 +75,15 @@ class RegForm extends React.Component {
                     className="box">
 
                     <div className="input-group">
-                        <label htmlFor="firstName">First Name</label>
+                        <label htmlFor="firsT_Name">First Name</label>
 
                         <input className="login-input"
-                            name="firstName"
+                            name="firsT_Name"
                             placeholder="First Name"
                             onChange={this.onChange}
-                            value={this.state.firstName}
-                            error={errors.firstName}
-                            id="firstName"
+                            value={this.state.firsT_Name}
+                            error={errors.firsT_Name}
+                            id="firsT_Name"
                             type="text"
                         />
                     </div>
