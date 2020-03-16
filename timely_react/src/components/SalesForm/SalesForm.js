@@ -167,7 +167,6 @@ class SalesForm extends React.Component {
                 <form onSubmit={this.onSubmit}
                     className="box">
 
-
 {
     //sunday sales
 }
@@ -195,7 +194,7 @@ class SalesForm extends React.Component {
                     </div>
 
 {
-//mondays Sales
+    //mondays Sales
 }
                     <div className="input-group">
                         <label htmlFor="monday">Monday's Sales</label>
@@ -219,7 +218,6 @@ class SalesForm extends React.Component {
                             />
                     </div>
                     
-
 {
     //tuesdays sales
 }
@@ -246,7 +244,6 @@ class SalesForm extends React.Component {
                             />
                     </div>
 
-
 {
     //wednesdays sales
 }
@@ -258,7 +255,7 @@ class SalesForm extends React.Component {
                             placeholder="Wednesday's Sales"
                             onChange={this.onChange}
                             value={this.state.wednesdaySales}
-                            error={errors.sales.wednesdaySales}
+                            error={errors.wednesdaySales}
                             id="wednesdaySales"
                             type="number"
                         />
@@ -272,7 +269,6 @@ class SalesForm extends React.Component {
                             type="date"
                             />
                     </div>
-
 
 {
     //thursday sales
@@ -301,7 +297,6 @@ class SalesForm extends React.Component {
                     </div>
                     <br></br>
 
-
 {
     //friday sales
 }
@@ -329,7 +324,6 @@ class SalesForm extends React.Component {
                             />
                     </div>
                     <br></br>
-
 
 {
     //saturday sales
