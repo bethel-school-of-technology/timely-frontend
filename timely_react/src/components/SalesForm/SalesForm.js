@@ -31,65 +31,74 @@ class SalesForm extends React.Component {
         }
     };
 
+//lets see if this function works for each weekday
     onPost = () => {
-        fetch("http://localhost:8080/sales", {
-            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-            method: "POST",
-            body: JSON.stringify({ 
-
-
-                //READ THIS COMMENT PLEASE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//not sure how to export the data. there are 7 states, each holding two properties.         
-                sales: this.state
-                 })
-        })
-            .then(res => res.headers.get("authorization"))
-            .then(token => {
-                if (token) {
-                    this.setState({ ...this.state, token: token });
-                } else {
-                    this.setState({ ...this.state, error: "Unable to input sales." });
-                }
-            });
-    }
-
-    //when submit is hit, this function is called which calls all the functions to enter data for each day of the week -Rebekah
-    onClick = () => {
-        this.onPostSun();
-        this.onPostMon();
-        this.onPostTue();
-        this.onPostWed();
-        this.onPostThu();
-        this.onPostFri();
-        this.onPostSat();
-    }
-    //this function assigns the data from the state properties to fields on the database's sales model(weekDay, dailySales, etc)...I think :) -Rebekah
-    onPostSun = () => {
-        //should we try putting all 7 fetch requests in one onPost function? -Rebekah
-        fetch("http://localhost:8080/sales", {
+        fetch("http://localhost:8080/sales", 
+    
+        //Sunday
+        {
             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
             method: "POST",
             body: JSON.stringify({ 
                 weekDay: "Sunday", dailySales: this.state.sundaySales, date: this.state.sundayDate,
             })
-   })
-       .then(res => res.headers.get("authorization"))
-       .then(token => {
-           if (token) {
-               this.setState({ ...this.state, token: token });
-           } else {
-               this.setState({ ...this.state, error: "Unable to input sales." });
-           }
-       });
-}
-    onPostMon = () => {
-        fetch("http://localhost:8080/sales", {
+        },
+        //Monday
+        {
             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
             method: "POST",
             body: JSON.stringify({ 
                 weekDay: "Monday", dailySales: this.state.mondaySales, date: this.state.mondayDate,
             })
-   })
+        },
+    
+        //Tuesday
+        {
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            method: "POST",
+            body: JSON.stringify({ 
+                weekDay: "Tuesday", dailySales: this.state.tuesdaySales, date: this.state.tuesdayDate,
+            })
+        },
+    
+        //Wednesday
+            {
+                headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                method: "POST",
+                body: JSON.stringify({ 
+                    weekDay: "Wednesday", dailySales: this.state.wednesdaySales, date: this.state.wednesdayDate,
+                })
+            },
+        
+        //Thursday
+            {
+                headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                method: "POST",
+                body: JSON.stringify({ 
+                    weekDay: "Thursday", dailySales: this.state.thursdaySales, date: this.state.thursdayDate,
+                })
+            },
+    
+        //Friday
+            {
+                headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                method: "POST",
+                body: JSON.stringify({ 
+                    weekDay: "Friday", dailySales: this.state.fridaySales, date: this.state.fridayDate,
+                })
+            },
+    
+        //Saturday
+            {
+                headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                method: "POST",
+                body: JSON.stringify({ 
+                    weekDay: "Saturday", dailySales: this.state.saturdaySales, date: this.state.saturdayDate,
+                })
+            }
+        
+    )
+// after data is gathered
        .then(res => res.headers.get("authorization"))
        .then(token => {
            if (token) {
@@ -97,93 +106,9 @@ class SalesForm extends React.Component {
            } else {
                this.setState({ ...this.state, error: "Unable to input sales." });
            }
-       });
-}
-onPostTue = () => {
-    fetch("http://localhost:8080/sales", {
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        method: "POST",
-        body: JSON.stringify({ 
-            weekDay: "Tuesday", dailySales: this.state.tuesdaySales, date: this.state.tuesdayDate,
-        })
-})
-   .then(res => res.headers.get("authorization"))
-   .then(token => {
-       if (token) {
-           this.setState({ ...this.state, token: token });
-       } else {
-           this.setState({ ...this.state, error: "Unable to input sales." });
-       }
-   });
-}
-onPostWed = () => {
-    fetch("http://localhost:8080/sales", {
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        method: "POST",
-        body: JSON.stringify({ 
-            weekDay: "Wednesday", dailySales: this.state.wednesdaySales, date: this.state.wednesdayDate,
-        })
-})
-   .then(res => res.headers.get("authorization"))
-   .then(token => {
-       if (token) {
-           this.setState({ ...this.state, token: token });
-       } else {
-           this.setState({ ...this.state, error: "Unable to input sales." });
-       }
-   });
-}
-onPostThu = () => {
-    fetch("http://localhost:8080/sales", {
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        method: "POST",
-        body: JSON.stringify({ 
-            weekDay: "Thursday", dailySales: this.state.thursdaySales, date: this.state.thursdayDate,
-        })
-})
-   .then(res => res.headers.get("authorization"))
-   .then(token => {
-       if (token) {
-           this.setState({ ...this.state, token: token });
-       } else {
-           this.setState({ ...this.state, error: "Unable to input sales." });
-       }
-   });
-}
-onPostFri = () => {
-    fetch("http://localhost:8080/sales", {
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        method: "POST",
-        body: JSON.stringify({ 
-            weekDay: "Friday", dailySales: this.state.fridaySales, date: this.state.fridayDate,
-        })
-})
-   .then(res => res.headers.get("authorization"))
-   .then(token => {
-       if (token) {
-           this.setState({ ...this.state, token: token });
-       } else {
-           this.setState({ ...this.state, error: "Unable to input sales." });
-       }
-   });
-}
-onPostSat = () => {
-    fetch("http://localhost:8080/sales", {
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        method: "POST",
-        body: JSON.stringify({ 
-            weekDay: "Saturday", dailySales: this.state.saturdaySales, date: this.state.saturdayDate,
-        })
-})
-   .then(res => res.headers.get("authorization"))
-   .then(token => {
-       if (token) {
-           this.setState({ ...this.state, token: token });
-       } else {
-           this.setState({ ...this.state, error: "Unable to input sales." });
-       }
-   });
-}
+       })
+    }
+    
 
 
 //onChange ties in the form values to the components state
@@ -197,6 +122,8 @@ onPostSat = () => {
         s.preventDefault();
 
 
+
+// Remove once data is confirmed to backend
         const newSales = {
             sundaySales: this.state.sundaySales,
             sundayDate: this.state.sundayDate,
@@ -224,6 +151,8 @@ onPostSat = () => {
         console.log(newSales);
     };
 
+
+
     render() {
         const { errors } = this.state;
         return <div className="root-container">
@@ -250,9 +179,7 @@ onPostSat = () => {
                             placeholder="Sunday's Sales"
                             onChange={this.onChange}
                             value={this.state.sundaySales}
-
-                            //error={errors.sunday.sales}
-
+                            error={errors.sundaySales}
                             id="sundaySales"
                             type="number"
                         />
@@ -261,9 +188,7 @@ onPostSat = () => {
                             name="sunday"
                             onChange={this.onChange}
                             value={this.state.sundayDate}
-
-                            //error={errors.date}
-                            
+                            error={errors.sundayDate}
                             id="sundayDate"
                             type="date"
                             />
@@ -280,6 +205,7 @@ onPostSat = () => {
                             placeholder="Monday Sales"
                             onChange={this.onChange}
                             value={this.state.mondaySales}
+                            error={errors.mondaySales}
                             id="mondaySales"
                             type="number"
                         />
@@ -287,9 +213,7 @@ onPostSat = () => {
                             name="date"
                             onChange={this.onChange}
                             value={this.state.mondayDate}
-
-                            //error={errors.date}
-
+                            error={errors.mondaydate}
                             id="mondayDate"
                             type="date"
                             />
@@ -307,9 +231,7 @@ onPostSat = () => {
                             placeholder="Tuesday's Sales"
                             onChange={this.onChange}
                             value={this.state.tuesdaySales}
-
-                            //error={errors.sales.teusday.sales}
-
+                            error={errors.teusdaySales}
                             id="tuesdaySales"
                             type="number"
                         />
@@ -318,9 +240,7 @@ onPostSat = () => {
                             name="tuesday"
                             onChange={this.onChange}
                             value={this.state.tuesdayDate}
-
-                            //error={errors.date}
-                            
+                            error={errors.tuesdayDate}
                             id="tuesdayDate"
                             type="date"
                             />
@@ -338,21 +258,17 @@ onPostSat = () => {
                             placeholder="Wednesday's Sales"
                             onChange={this.onChange}
                             value={this.state.wednesdaySales}
-
-                            //error={errors.sales.teusday.sales}
-
+                            error={errors.sales.wednesdaySales}
                             id="wednesdaySales"
                             type="number"
                         />
 
-                        <input className="login-input"
+                            <input className="login-input"
                             name="wednesday"
                             onChange={this.onChange}
                             value={this.state.wednesdayDate}
-
-                            //error={errors.date}
-                            
-                            id="WednesdayDate"
+                            error={errors.wednesdayDate}
+                            id="wednesdayDate"
                             type="date"
                             />
                     </div>
@@ -369,9 +285,7 @@ onPostSat = () => {
                             placeholder="Thursday's Sales"
                             onChange={this.onChange}
                             value={this.state.thursdaySales}
-
-                            //error={errors.sales.teusday.sales}
-
+                            error={errors.thursdaySales}
                             id="thursdaySales"
                             type="number"
                         />
@@ -380,9 +294,7 @@ onPostSat = () => {
                             name="thursday"
                             onChange={this.onChange}
                             value={this.state.thursdayDate}
-
-                            //error={errors.date}
-                            
+                            error={errors.thursdayDate}
                             id="thursdayDate"
                             type="date"
                             />
@@ -402,9 +314,7 @@ onPostSat = () => {
                             placeholder="Friday's Sales"
                             onChange={this.onChange}
                             value={this.state.fridaySales}
-
-                            //error={errors.friday.sales}
-
+                            error={errors.fridaySales}
                             id="fridaySales"
                             type="number"
                         />
@@ -413,9 +323,7 @@ onPostSat = () => {
                             name="friday"
                             onChange={this.onChange}
                             value={this.state.fridayDate}
-
-                            //error={errors.date}
-                            
+                            error={errors.fridayDate}
                             id="fridayDate"
                             type="date"
                             />
@@ -434,9 +342,7 @@ onPostSat = () => {
                             placeholder="Saturday's Sales"
                             onChange={this.onChange}
                             value={this.state.saturdaySales}
-
-                            //error={errors.saturday.sales}
-
+                            error={errors.saturdaySales}
                             id="saturdaySales"
                             type="number"
                         />
@@ -445,9 +351,7 @@ onPostSat = () => {
                             name="saturday"
                             onChange={this.onChange}
                             value={this.state.saturdayDate}
-
-                            //error={errors.date}
-                            
+                            error={errors.saturdayDate}
                             id="saturdayDate"
                             type="date"
                             />
