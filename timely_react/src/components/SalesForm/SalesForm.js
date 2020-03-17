@@ -228,7 +228,7 @@ onPostSat = () => {
         const { errors } = this.state;
         return <div className="root-container"> 
         
-           <h1 style={{ color: "#009688" }}>Input Daily Sales</h1>
+           <h1 style={{ color: "#009688" }}>Input Weekly Sales</h1>
         <br></br>
             <div className="inner-container">
                 <div className="box-header">
@@ -299,7 +299,7 @@ onPostSat = () => {
     //tuesdays sales
 }
                     <div className="input-group">
-                        <label htmlFor="tuesday">Teusday's Sales</label>
+                        <label htmlFor="tuesday">Tuesday's Sales</label>
 
                         <input className="login-input"
                             name="tuesday"
@@ -307,7 +307,7 @@ onPostSat = () => {
                             onChange={this.onChange}
                             value={this.state.tuesdaySales}
 
-                            //error={errors.sales.teusday.sales}
+                            //error={errors.sales.tuesday.sales}
 
                             id="tuesdaySales"
                             type="number"
@@ -338,7 +338,7 @@ onPostSat = () => {
                             onChange={this.onChange}
                             value={this.state.wednesdaySales}
 
-                            //error={errors.sales.teusday.sales}
+                            //error={errors.sales.tuesday.sales}
 
                             id="wednesdaySales"
                             type="number"
@@ -351,7 +351,7 @@ onPostSat = () => {
 
                             //error={errors.date}
                             
-                            id="WednesdayDate"
+                            id="wednesdayDate"
                             type="date"
                             />
                     </div>
@@ -386,7 +386,7 @@ onPostSat = () => {
                             type="date"
                             />
                     </div>
-                    <br></br>
+                    
 
 
 {
@@ -419,7 +419,7 @@ onPostSat = () => {
                             type="date"
                             />
                     </div>
-                    <br></br>
+                    
 
 
 {
@@ -452,9 +452,8 @@ onPostSat = () => {
                             />
                     </div>
                     
-                        <button
-                        className="login-btn"
-                        type="submit" onClick={this.onClick}>Submit</button>
+                    <button className="login-btn" type="submit"
+                     onClick={this.onPost}>Submit</button>
 
                 </form>
             </div>
