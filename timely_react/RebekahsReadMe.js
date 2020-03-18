@@ -1,4 +1,7 @@
 
+//previous code for reference regarding fetch/posting data
+
+
 
 class App extends Component {
   constructor(props) {
@@ -24,7 +27,6 @@ class App extends Component {
     });
   }
 
-
   //Register page and posting data to database
   onRegister = () => {
     fetch("http://localhost:8080/api/user/register", {
@@ -44,9 +46,9 @@ class App extends Component {
 
 
 //code below is simplified by this code -- 
-      //  onChange = e => {
-      //  this.setState({ [e.target.id]: e.target.value });
-      //  }
+//        onChange = e => {this.setState({ [e.target.id]: e.target.value });}
+//what this is doing, is allowing every object given an ID to be passed to the target hosting the same value. instead of specifying EACH target, you can create a multi-targeting function
+
   onUsernameChange = (e) => this.setState({ ...this.state, username: e.target.value });
   onPasswordChange = (e) => this.setState({ ...this.state, password: e.target.value });
   onFirstNameChange = (e) => this.setState({ ...this.state, firstName: e.target.value });

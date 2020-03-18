@@ -31,85 +31,155 @@ class SalesForm extends React.Component {
         }
     };
 
-//lets see if this function works for each weekday
-    onPost = () => {
-        fetch("http://localhost:8080/sales", 
-    
-        //Sunday
-        {
-            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-            method: "POST",
-            body: JSON.stringify({ 
-                weekDay: "Sunday", dailySales: this.state.sundaySales, date: this.state.sundayDate,
-            })
-        },
-        //Monday
-        {
-            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-            method: "POST",
-            body: JSON.stringify({ 
-                weekDay: "Monday", dailySales: this.state.mondaySales, date: this.state.mondayDate,
-            })
-        },
-    
-        //Tuesday
-        {
-            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-            method: "POST",
-            body: JSON.stringify({ 
-                weekDay: "Tuesday", dailySales: this.state.tuesdaySales, date: this.state.tuesdayDate,
-            })
-        },
-    
-        //Wednesday
-            {
-                headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-                method: "POST",
-                body: JSON.stringify({ 
-                    weekDay: "Wednesday", dailySales: this.state.wednesdaySales, date: this.state.wednesdayDate,
-                })
-            },
-        
-        //Thursday
-            {
-                headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-                method: "POST",
-                body: JSON.stringify({ 
-                    weekDay: "Thursday", dailySales: this.state.thursdaySales, date: this.state.thursdayDate,
-                })
-            },
-    
-        //Friday
-            {
-                headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-                method: "POST",
-                body: JSON.stringify({ 
-                    weekDay: "Friday", dailySales: this.state.fridaySales, date: this.state.fridayDate,
-                })
-            },
-    
-        //Saturday
-            {
-                headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-                method: "POST",
-                body: JSON.stringify({ 
-                    weekDay: "Saturday", dailySales: this.state.saturdaySales, date: this.state.saturdayDate,
-                })
-            }
-        
-    )
-// after data is gathered
-       .then(res => res.headers.get("authorization"))
-       .then(token => {
-           if (token) {
-               this.setState({ ...this.state, token: token });
-           } else {
-               this.setState({ ...this.state, error: "Unable to input sales." });
-           }
-       })
-    }
-    
+   //when submit is hit, this function is called which calls all the functions to enter data for each day of the week -Rebekah
+   onClick = () => {
+    this.onPostSun();
+    this.onPostMon();
+    this.onPostTue();
+    this.onPostWed();
+    this.onPostThu();
+    this.onPostFri();
+    this.onPostSat();
+}
 
+
+//this function assigns the data from the state properties to fields on the database's sales model(weekDay, dailySales, etc)...I think :) -Rebekah
+
+//sunday
+onPostSun = () => {
+    //should we try putting all 7 fetch requests in one onPost function? -Rebekah
+    //For now, we'll table a single fetch with multiple objects & values.
+    fetch("http://localhost:8080/sales", {
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        method: "POST",
+        body: JSON.stringify({
+            weekDay: "Sunday", dailySales: this.state.sundaySales, date: this.state.sundayDate,
+        })
+})
+   .then(res => res.headers.get("authorization"))
+   .then(token => {
+       if (token) {
+           this.setState({ ...this.state, token: token });
+       } else {
+           this.setState({ ...this.state, error: "Unable to input sales." });
+       }
+   });
+}
+
+//monday
+onPostMon = () => {
+    fetch("http://localhost:8080/sales", {
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        method: "POST",
+        body: JSON.stringify({ 
+            weekDay: "Monday", dailySales: this.state.mondaySales, date: this.state.mondayDate,
+        })
+})
+   .then(res => res.headers.get("authorization"))
+   .then(token => {
+       if (token) {
+           this.setState({ ...this.state, token: token });
+       } else {
+           this.setState({ ...this.state, error: "Unable to input sales." });
+       }
+   });
+}
+
+//tuesday
+onPostTue = () => {
+fetch("http://localhost:8080/sales", {
+    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+    method: "POST",
+    body: JSON.stringify({ 
+        weekDay: "Tuesday", dailySales: this.state.tuesdaySales, date: this.state.tuesdayDate,
+    })
+})
+.then(res => res.headers.get("authorization"))
+.then(token => {
+   if (token) {
+       this.setState({ ...this.state, token: token });
+   } else {
+       this.setState({ ...this.state, error: "Unable to input sales." });
+   }
+});
+}
+
+//wedneday
+onPostWed = () => {
+fetch("http://localhost:8080/sales", {
+    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+    method: "POST",
+    body: JSON.stringify({ 
+        weekDay: "Wednesday", dailySales: this.state.wednesdaySales, date: this.state.wednesdayDate,
+    })
+})
+.then(res => res.headers.get("authorization"))
+.then(token => {
+   if (token) {
+       this.setState({ ...this.state, token: token });
+   } else {
+       this.setState({ ...this.state, error: "Unable to input sales." });
+   }
+});
+}
+
+//thursday
+onPostThu = () => {
+fetch("http://localhost:8080/sales", {
+    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+    method: "POST",
+    body: JSON.stringify({ 
+        weekDay: "Thursday", dailySales: this.state.thursdaySales, date: this.state.thursdayDate,
+    })
+})
+.then(res => res.headers.get("authorization"))
+.then(token => {
+   if (token) {
+       this.setState({ ...this.state, token: token });
+   } else {
+       this.setState({ ...this.state, error: "Unable to input sales." });
+   }
+});
+}
+
+//friday
+onPostFri = () => {
+fetch("http://localhost:8080/sales", {
+    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+    method: "POST",
+    body: JSON.stringify({ 
+        weekDay: "Friday", dailySales: this.state.fridaySales, date: this.state.fridayDate,
+    })
+})
+.then(res => res.headers.get("authorization"))
+.then(token => {
+   if (token) {
+       this.setState({ ...this.state, token: token });
+   } else {
+       this.setState({ ...this.state, error: "Unable to input sales." });
+   }
+});
+}
+
+//saturday
+onPostSat = () => {
+fetch("http://localhost:8080/sales", {
+    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+    method: "POST",
+    body: JSON.stringify({ 
+        weekDay: "Saturday", dailySales: this.state.saturdaySales, date: this.state.saturdayDate,
+    })
+})
+.then(res => res.headers.get("authorization"))
+.then(token => {
+   if (token) {
+       this.setState({ ...this.state, token: token });
+   } else {
+       this.setState({ ...this.state, error: "Unable to input sales." });
+   }
+});
+}
+    
 
 //onChange ties in the form values to the components state
     onChange = e => {
@@ -222,14 +292,14 @@ class SalesForm extends React.Component {
     //tuesdays sales
 }
                     <div className="input-group">
-                        <label htmlFor="tuesday">Teusday's Sales</label>
+                        <label htmlFor="tuesday">Tuesday's Sales</label>
 
                         <input className="login-input"
                             name="tuesday"
                             placeholder="Tuesday's Sales"
                             onChange={this.onChange}
                             value={this.state.tuesdaySales}
-                            error={errors.teusdaySales}
+                            error={errors.tuesdaySales}
                             id="tuesdaySales"
                             type="number"
                         />
@@ -361,6 +431,7 @@ class SalesForm extends React.Component {
             </div>
         </div>
     }
-    //if this communicates with the backend, im curious with how data will transfer.
 }
+    //if this communicates with the backend, im curious with how data will transfer.
+
 export default SalesForm;
