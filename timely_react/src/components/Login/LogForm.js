@@ -29,7 +29,8 @@ class LoginForm extends React.Component {
       .then(res => res.headers.get("authorization"))
       .then(token => {
         if (token) {
-          this.setState({ ...this.state, token: token });
+          this.setState({ ...this.state, token: token })
+          .then();
         } else {
           this.setState({ ...this.state, error: "Unable to login with username and password." });
         }
