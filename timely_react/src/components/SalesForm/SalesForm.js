@@ -247,20 +247,21 @@ class SalesForm extends React.Component {
       saturdaySales: this.state.saturdaySales,
       saturdayDate: this.state.saturdayDate
     };
-
-    console.log(newSales);
+  console.log(newSales);
   };
 
-  render() {
-    const { errors } = this.state;
-    return (
-      <div className="root-container">
-        <h1>Input Weekly Sales</h1>
+    render() {
+        const { errors } = this.state;
+        return <div className="root-container"> 
+        
+           <h1 style={{ color: "#009688" }}>Input Weekly Sales</h1>
         <br></br>
-        <div className="inner-container">
-          <div className="box-header"></div>
+            <div className="inner-container">
+                <div className="box-header">
+                </div>
 
-          <form onSubmit={this.onSubmit} className="box">
+                <form onSubmit={this.onSubmit}
+                    className="box">
             {
               //sunday sales
             }
@@ -399,7 +400,6 @@ class SalesForm extends React.Component {
                 type="date"
               />
             </div>
-            <br></br>
 
             {
               //friday sales
@@ -429,7 +429,6 @@ class SalesForm extends React.Component {
                 type="date"
               />
             </div>
-            <br></br>
 
             {
               //saturday sales
@@ -458,8 +457,6 @@ class SalesForm extends React.Component {
                 type="date"
               />
             </div>
-            <br></br>
-
             <button
               className="login-btn"
               type="submit"
@@ -470,8 +467,7 @@ class SalesForm extends React.Component {
           </form>
         </div>
       </div>
-    );
+};
   }
   //if this communicates with the backend, im curious with how data will transfer.
-}
 export default SalesForm;
