@@ -5,41 +5,31 @@ import {
   } from "react-router-dom";
 
 
-import Home from '../Pages/Home/Home';
-import SalesPage from '../Pages/Sales/Sales';
+import '../Styles/Styles.scss';
+import AddSales from '../Pages/AddSales/AddSales';
 
 
 export default function SaLinks() {
     return (
-            <div style={{
-                backgroundColor: "darkgray",
-                display: "flex",
-                justifyContent: "space-around",
-                height: "35px"
-            }}>
+        <div style={{
+            display: "flex",
+            justifyContent: "center"
+        }}>
 
-                <button style={{
-                backgroundColor: "lightblue",
-                width: "30%",
-                fontSize: "1.5em",
-                fontWeight: "bold"
+        <button style={{
+            fontSize: "1.5em",
+            width:"50%",
+            height: "auto",
+            borderRadius: "12px",
+            backgroundColor: "lightgreen",
+            border: "4px solid grey",
+            position: "fixed",
+            bottom: 0
             }}>
-                <nav><Link to="/home">Home</Link></nav>
-                </button>
-            <div>
-                <Route path="/home" component={Home} />
-            </div>
-
-            <button style={{
-                backgroundColor: "orange",
-                width: "30%",
-                fontSize: "1.5em",
-                fontWeight: "bold"
-            }}>
-            <nav><Link to="/sales">Sales</Link></nav>
+            <nav><Link to="/addSales">Input Past Sales</Link></nav>
             </button>
             <div>
-                <Route path="/sales" component={SalesPage} />
+                <Route path="/addSales" component={AddSales} />
             </div>
             </div>
     );
