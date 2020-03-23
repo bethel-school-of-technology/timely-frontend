@@ -108,6 +108,7 @@ class LoginForm extends React.Component {
               <Link to="/home" className="login-btn"><button
                 type="submit"
                 onClick={this.props.onLogin}>Login</button></Link>
+             {/* <input type="button" value={this.state.loggedIn ? 'log out': 'log in' } onClick={this.loginHandle.bind(this)}/> */}
             </form>
 
             //here is where (I HOPE) it is saying, if the token matches, then render the Home page

@@ -12,11 +12,11 @@ class Register extends React.Component {
                 <div>
                     <RegForm uri="http://localhost:8080/register"/>
                 </div>
+            {/* <br></br>
             <br></br>
-            <br></br>
-                <div>
+                {/* <div>
                     <LogLink/>
-                </div>
+                </div> */} */}
             </div>
         );
     }

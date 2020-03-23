@@ -457,7 +457,7 @@ class SalesForm extends React.Component {
                 type="date"
               />
             </div>
-            <button
+            <button 
               className="login-btn"
               type="submit"
               onClick={this.onPostSun}
