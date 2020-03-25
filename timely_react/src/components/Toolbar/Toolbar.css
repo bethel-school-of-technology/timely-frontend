@@ -3,10 +3,11 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: #399e99;
-    height: 64px;
-    border: rgb(230, 247, 247);
-    border-style: groove
+    background: #222;
+    height: 70px;
+    border: #00baa5;
+    border-style: ridge;
+    
 }
 
 .toolbar__navigation {
@@ -18,14 +19,14 @@
 }
 
 .toolbar__logo {
-    margin-left: 1rem;
+    margin-left: 1.0rem;
     
 }
 
 .toolbar__logo a {
-    color: white;
+    color: #84f0e1;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 2.5rem;
 
 }
 
@@ -47,7 +48,7 @@
 }
 
 .toolbar_navigation-items a {
-    color: white;
+    color: #84f0e1;
     text-decoration: none;
     display: flex;
 }
@@ -62,7 +63,7 @@
 
 .toolbar_navigation-items a:hover,
 .toolbar_navigation-items a:active {
-    color: orange;
+    color: white;
 }
 
 @media (max-width: 768px) {
@@ -79,3 +80,4 @@
  .toolbar__logo {
      margin-left: 1;
  }
+

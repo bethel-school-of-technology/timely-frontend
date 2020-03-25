@@ -5,6 +5,7 @@ import './Toolbar.css';
 
 
 const toolbar = props => (
+  <div>
     <header className="toolbar">
 
         <nav className="toolbar__navigation">
@@ -14,7 +15,7 @@ const toolbar = props => (
             </div>
 
             <div className="toolbar__logo">
-           <a href="/home">Timely</a> <span className="image1"><img src="./images/TimelyLogo.png" width="32" alt="logo" /></span>
+           <a href="/home">Timely</a> <span className="image1"><img src="./images/TML.png" width="37" alt="logo" /></span>
              
             </div>
 
@@ -32,8 +33,9 @@ const toolbar = props => (
             
         </nav>
     </header>
+ 
 
-
+ </div>
 );
 
 export default toolbar;

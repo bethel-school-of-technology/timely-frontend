@@ -2,11 +2,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
+  outline-color: linear-gradient(180deg,#f05a28,#e80a89);
 }
 
 a {
@@ -19,9 +21,11 @@ html {
 
 body {
   margin: 0;
-  font-family: "Poppins",sans-serif;
+  font-family: Poppins,sans-serif;
   height: 100%;
-}
+  outline-color: linear-gradient(180deg,#f05a28,#e80a89);
+
+  }
 
 #main2 {
   color: grey;
@@ -34,7 +38,7 @@ body {
 #main2 .main-text {
   font-size: 40px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 span {

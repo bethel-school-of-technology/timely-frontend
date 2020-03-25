@@ -7,11 +7,11 @@ import HomePage from '../Pages/Home/Home';
 import SalesPage from '../Pages/Sales/Sales';
 import AddSales from '../Pages/AddSales/AddSales';
 import Register from '../Pages/Register/Register';
-import Toolbar from '../components/Toolbar/Toolbar';
+import Landing from '../Pages/Landing/Landing';
 
 export default function Routes() {
     return <Switch>
-        <Route path="/" exact component={Toolbar} />
+        <Route path="/" exact component={Landing} />
         <Route path="/login" component={Login}  />
         
         
