@@ -1,0 +1,16 @@
+#main2 {
+    margin: 0 100px;
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-style: ridge;
+    height: 100vh;
+    padding: 0px 24px;
+  }
+  
+  #main2 .main-text {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
