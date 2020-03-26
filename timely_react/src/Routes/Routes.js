@@ -7,14 +7,14 @@ import HomePage from '../Pages/Home/Home';
 import SalesPage from '../Pages/Sales/Sales';
 import AddSales from '../Pages/AddSales/AddSales';
 import Register from '../Pages/Register/Register';
-
+import Landing from '../Pages/Landing/Landing';
 
 export default function Routes() {
     return <Switch>
-        <Route path="/" exact component={Login} />
+        <Route path="/" exact component={Landing} />
         <Route path="/login" component={Login}  />
         
-
+        
         <Route path="/home" component={HomePage} />
         <Route path="/sales" component={SalesPage} />
         <Route path="/addSales" component={AddSales} />

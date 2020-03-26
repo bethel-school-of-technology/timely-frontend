@@ -69,10 +69,10 @@ class RegForm extends React.Component {
         return <div className="root-container">
             <div className="inner-container">
                 <div className="box-header"> 
-                <br/>
+                <br/><br></br><br></br><br></br><br></br><br></br><br></br>
                 <h1 style={{textAlign:'center',color:'#009688'}}>Register Here</h1>  <br/>
                 </div>
-
+                
                 <form onSubmit={this.onSubmit}
                     className="box">
 
@@ -89,7 +89,7 @@ class RegForm extends React.Component {
                             type="text"
                         />
                     </div>
-
+                    
                     <div className="input-group">
                         <label htmlFor="lastName">Last Name</label>
 
@@ -103,7 +103,7 @@ class RegForm extends React.Component {
                             type="text"
                         />
                     </div>
-
+                    
                     <div className="input-group">
                         <label htmlFor="username">UserName</label>
 
@@ -117,7 +117,7 @@ class RegForm extends React.Component {
                             type="text"
                         />
                     </div>
-
+                    
 
                     <div className="input-group">
                         <label htmlFor="email">Email</label>
@@ -132,7 +132,7 @@ class RegForm extends React.Component {
                             type="email" />
                     </div>
 
-
+                    
                     <div className="input-group">
                         <label htmlFor="company">Company</label>
 
@@ -146,7 +146,7 @@ class RegForm extends React.Component {
                             type="text" />
                     </div>
 
-
+                    
                     <div className="input-group">
                         <label htmlFor="password">Create Password</label>
 
@@ -159,7 +159,7 @@ class RegForm extends React.Component {
                             id="password"
                             type="password" />
                     </div>
-
+                    <br></br>
                     <Link to="/login" className="login-btn"><button
                         className="login-btn"
                         type="submit" onClick={this.onRegister}>Register</button></Link>

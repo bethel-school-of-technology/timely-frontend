@@ -11,9 +11,9 @@ import AddSales from '../Pages/AddSales/AddSales';
 
 export default function HomLinks() {
     return (
-
         
-        <div> <br/> <br/> <br/> <br/> <br/> <br/>
+        
+        <div> <br/> <br/> <br/> <br/> <br/> <br/><br></br><br></br>
  <h1 style={{textAlign:'center',color:'#009688'}}>Add Sales or Lookup Past Sales</h1> <br/> <br/> <br/>
 
           
@@ -25,10 +25,10 @@ export default function HomLinks() {
 
             <button style={{
                 fontSize: "3em",
-                width:"70%",
+                width:"60%",
                 height: "30%",
                 borderRadius: "12px",
-                backgroundColor: "lightgreen",
+                backgroundColor: "#84f0e1",
                 border: "4px solid grey",
             }}>
             <nav><Link to="/sales">Sales</Link></nav>
