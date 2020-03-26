@@ -30,7 +30,6 @@ class LoginForm extends React.Component {
       .then(token => {
         if (token) {
           this.setState({ ...this.state, token: token })
-          .then();
         } else {
           this.setState({ ...this.state, error: "Unable to login with username and password." });
         }
@@ -105,7 +104,7 @@ class LoginForm extends React.Component {
                   type="password" />
               </div>
 
-              <Link to="/home" className="login-btn"><button
+              <button className="login-btn"
                 type="submit"
                 onClick={this.props.onLogin}>Login</button></Link>
              {/* <input type="button" value={this.state.loggedIn ? 'log out': 'log in' } onClick={this.loginHandle.bind(this)}/> */}

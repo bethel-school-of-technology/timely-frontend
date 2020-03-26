@@ -133,6 +133,15 @@ class Sales extends React.Component {
         ]
     }
 
+componentDidMount() {
+    fetch("http://localhost:8080/sales", {
+        headers: { 'Authorization': this.state.token }
+      })
+      .then(response => response.json())
+      .then(data => console.log(data));
+}
+
+
 Sunday() {
         return this.state.sunday.map((sunday) => {
             const {date, dailySales} = sunday;
