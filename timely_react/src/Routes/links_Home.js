@@ -18,22 +18,20 @@ export default function HomLinks() {
 
           
 
-            <div style={{
+     
+ <div style={{
                 display: "flex",
                 justifyContent: "center"
             }}>
 
-            <button style={{
-                fontSize: "3em",
-                width:"60%",
-                height: "30%",
-                borderRadius: "12px",
-                backgroundColor: "#84f0e1",
-                border: "4px solid grey",
-            }}>
+            <button className="Button4">
+            
             <nav><Link to="/sales">Sales</Link></nav>
+            
             </button>
+            
             <div>
+                
             <Route path="/sales" component={SalesPage} />
             </div>
             </div>
@@ -42,17 +40,13 @@ export default function HomLinks() {
                 display: "flex",
                 justifyContent: "center"
                         }}>
-            <button style={{
-                fontSize: "3em",
-                width:"70%",
-                height: "30%",
-                borderRadius: "12px",
-                backgroundColor: "##d9e3f0",
-                border: "4px solid grey",
-                            }}>
-
+                        
+            <button className="Button5">
+                
+                    
             <nav><Link to="/addSales">Add Sales</Link></nav>
             </button> 
+            
             <div>
             <Route path="/addSales" component={AddSales} />
             </div>

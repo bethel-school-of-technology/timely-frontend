@@ -87,8 +87,8 @@ $blue_theme: #8ed1f6;;
 .input-group {
     display: flex;
     flex-direction: column;
-    margin-top: 16px;
-    margin-bottom: 5px;
+    margin-top: 13px;
+    margin-bottom: 4px;
 }
 
 //Label
@@ -101,11 +101,11 @@ $blue_theme: #8ed1f6;;
 
 //Input
 .login-input {
-    height: 2.0em;
+    height: 2.5em;
     border-radius: 3px;
     border: 1px solid $blue_theme;
     transition: border 0.4s ease-out;
-    padding: 15px;
+    padding: 18px;
     font-family:  Montserrat, sans-serif;
     font-size: 19px;
     color: #3e3e42;
@@ -129,23 +129,135 @@ $blue_theme: #8ed1f6;;
 }
 
 .login-btn {
-    padding: 2px 35px;
-    /* background-color: #417cef; */
+    padding: 5px 45px;
+    background-color: #417cef;
     border: 0;
     font-size: 18px;
     border-radius: 3px;
     font-family: Montserrat, sans-serif;
     background-color: #00a894;
-    margin-top: 12px;
-    border: 2px solid gray;
+    margin-top: 3px;
+    border: 2px solid #00a894;;
     transition: background-color 0.3s ease-out;
-    cursor: pointer;
+    cursor: pointer; 
 }
+
+.login-btn2 {
+   padding: 9px 107px;
+   /* background-color: #417cef; */
+   border: 0;
+   font-size: 18px;
+   border-radius: 3px;
+   font-family: Montserrat, sans-serif;
+   background-color: #00a894;
+   margin-top: 20px;
+   border: 2px solid #acece5;
+   transition: background-color 0.3s ease-out;
+   cursor: pointer;
+}
+
+.login-btn3 {
+   padding: 2px 75px;
+   /* background-color: #417cef; */
+   border: 0;
+   font-size: 16px;
+   border-radius: 3px;
+   font-family: Montserrat, sans-serif;
+   background-color: #00a894;
+   margin-top: 15px;
+   border: 2px solid #acece5;
+   transition: background-color 0.3s ease-out;
+   cursor: pointer;
+}
+
+
 
 .login-btn:hover,
 .login-btn:focus {
-    background-color:  #009688;
-    color: #009688;
+   background-color:  #009688;
+   color: #009688;
+}
+
+.login-btn2:hover,
+.login-btn2:focus {
+   background-color:  #009688;
+   color: #acece5;
+}
+
+.login-btn3:hover,
+.login-btn3:focus {
+   background-color:  #009688;
+   // color: #acece5;
+}
+
+
+
+.Button4 {
+   font-size: 3em;
+   width: 60%;
+   height: 30%;
+   border-radius: 12px;
+   background-color: #009688;
+   border: 4px solid grey;
+}
+
+.Button4:hover,
+.Button4:focus {
+   background-color: #aaa;
+   
+}
+
+.Button5 {
+   font-size: 3em;
+   width: 70%;
+   height: 30%;
+   border-radius: 12px;
+   background-color: #84f0e1;
+   border: 4px solid grey;
+
+}
+
+.Button6 {
+   padding: 10px 95px;
+   /* background-color: #417cef; */
+   border: 0;
+   font-size: 16px;
+   border-radius: 3px;
+   font-family: Montserrat, sans-serif;
+   background-color: #00a894;
+   margin-top: 0px;
+   border: 3px solid #acece5;
+   transition: background-color 0.1s ease-out;
+   cursor: pointer;
+
+}
+
+.Button7 {
+   padding: 9px 118px;
+   /* background-color: #417cef; */
+   border: 0;
+   font-size: 18px;
+   border-radius: 3px;
+   font-family: Montserrat, sans-serif;
+   background-color: #00a894;
+   margin-top: 15px;
+   border: 2px solid #acece5;
+   transition: background-color 0.3s ease-out;
+   cursor: pointer;
+}
+
+
+
+.Button6:hover,
+.Button6:focus {
+   background-color: #acece5;
+   color: #acece5;
+}
+
+
+.Button5:hover,
+.Button5:focus {
+   background-color: #d9f1ff;
 }
 
 .danger-error {

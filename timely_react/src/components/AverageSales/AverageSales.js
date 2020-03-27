@@ -58,12 +58,14 @@ Average() {
     render() {
        
     return (
-        <div id="body">
-            <h1 id="title">Sales Forecast</h1>
+        <div id="body"> 
+        <br></br> <br></br><br></br> <br></br><br></br>
+        <br></br><br></br>
+           <h1 style={{ color: "#009688" }}>Sales Forecast</h1>
+           <br></br><br></br>
             <table id="sales">
                 <tbody>
                     <td>{this.Average()}</td>
-
                 </tbody>
             </table>
         </div>

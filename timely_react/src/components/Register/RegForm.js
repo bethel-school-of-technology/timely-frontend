@@ -160,7 +160,7 @@ class RegForm extends React.Component {
                             type="password" />
                     </div>
                     <br></br>
-                    <Link to="/login" className="login-btn"><button
+                    <Link to="/login" className="login-btn3"><button
                         className="login-btn"
                         type="submit" onClick={this.onRegister}>Register</button></Link>
 

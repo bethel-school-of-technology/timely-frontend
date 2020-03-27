@@ -11,26 +11,25 @@ import AddSales from '../Pages/AddSales/AddSales';
 
 export default function SaLinks() {
     return (
+        
         <div style={{
             display: "flex",
             justifyContent: "center"
         }}>
-
-        <button style={{
-            fontSize: "1.5em",
-            width:"50%",
-            height: "auto",
-            borderRadius: "12px",
-            backgroundColor: "lightgreen",
-            border: "4px solid grey",
-            position: "fixed",
-            bottom: 0
-            }}>
+         <form>  
+             <br></br> 
+        <button className="Button7">
+            
             <nav><Link to="/addSales">Input Past Sales</Link></nav>
+            
             </button>
+            
             <div>
                 <Route path="/addSales" component={AddSales} />
             </div>
+            <br></br><br></br> <br></br><br></br>
+            </form>   
+           
             </div>
     );
 }

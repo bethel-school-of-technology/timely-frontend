@@ -291,7 +291,7 @@ class SalesForm extends React.Component {
                 type="date"
               />
             </div>
-            <br></br>
+           
             {
               //mondays Sales
             }
@@ -318,7 +318,7 @@ class SalesForm extends React.Component {
                 type="date"
               />
             </div>
-            <br></br>
+           
             {
               //tuesdays sales
             }
@@ -346,7 +346,7 @@ class SalesForm extends React.Component {
                 type="date"
               />
             </div>
-            <br></br>
+           
             {
               //wednesdays sales
             }
@@ -374,7 +374,7 @@ class SalesForm extends React.Component {
                 type="date"
               />
             </div>
-            <br></br>
+           
             {
               //thursday sales
             }
@@ -402,7 +402,7 @@ class SalesForm extends React.Component {
                 type="date"
               />
             </div>
-            <br></br>
+            
             {
               //friday sales
             }
@@ -431,7 +431,7 @@ class SalesForm extends React.Component {
                 type="date"
               />
             </div>
-            <br></br>
+            
             {
               //saturday sales
             }
@@ -458,14 +458,15 @@ class SalesForm extends React.Component {
                 id="saturdayDate"
                 type="date"
               />
-            </div> <br></br>
+            </div> 
             <button 
-              className="login-btn"
+              className="login-btn2"
               type="submit"
               onClick={this.onPostSun}
             >
               Submit
             </button>
+            <br/>
           </form>
         </div>
       </div>

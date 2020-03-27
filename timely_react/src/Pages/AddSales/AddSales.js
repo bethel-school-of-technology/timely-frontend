@@ -17,31 +17,32 @@ class AddSales extends React.Component{
     
     render(){
         return (
+        <div>    
         <div>
-            <div>
             <SalesForm/>
-            </div>
-<br></br>
+        </div>
+        <form>
             <div style={{
                 display: "flex",
                 justifyContent: "center"
             }}>
-            <button style={{
-                fontSize: "1em",
-                fontWeight: "bold",
-                width:"37%",
-                height: "auto",
-                backgroundColor: "lightgreen",
-                border: "2.5px solid grey",
-                cursor: "pointer"
-            }}>
+            <button
+             className="Button6">
+              
             <nav><Link to="/sales">Sales Page</Link></nav>
             </button>
             <div>
+                
             <Route path="/sales" component={SalesPage} />
+           
             </div>
             </div>
-            </div>  
+        
+        </form> 
+           <br></br><br></br><br></br>
+            </div>   
+
+
         );
     }
 }

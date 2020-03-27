@@ -15,7 +15,7 @@ const toolbar = props => (
             </div>
 
             <div className="toolbar__logo">
-           <a href="/home">Timely</a> <span className="image1"><img src="./images/TML.png" width="37" alt="logo" /></span>
+           <a href="/">Timely</a> <span className="image1"><img src="./images/TML.png" width="37" alt="logo" /></span>
              
             </div>
 
