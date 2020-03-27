@@ -4,10 +4,9 @@ body,
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    
 }
 
-$blue_theme: #8ed1f6;;
+$blue_theme: #70a1ff;
 //Root Container
 .root-container {
     width: 100%;
@@ -59,7 +58,6 @@ $blue_theme: #8ed1f6;;
 
 .inner-container {
     transition: visibility 0.2s ease-out;
-    
 }
 
 .inner-container.show {
@@ -73,7 +71,7 @@ $blue_theme: #8ed1f6;;
     margin-bottom: 17px;
     /* margin-left: 35px; */
     /* margin-right: 35px; */
-    font-family:  Montserrat, sans-serif;
+    font-family: Ozxgen, sans-serif;
     font-size: 22px;
     border-bottom: 2px solid $blue_theme;
 }
@@ -87,13 +85,13 @@ $blue_theme: #8ed1f6;;
 .input-group {
     display: flex;
     flex-direction: column;
-    margin-top: 16px;
+    margin-top: 5px;
     margin-bottom: 5px;
 }
 
 //Label
 .login-label {
-    font-family:  Montserrat, sans-serif;
+    font-family: Oxygen, sans-serif;
     font-size: 20px;
     font-weight: 600;
     padding-left: 5px;
@@ -101,12 +99,12 @@ $blue_theme: #8ed1f6;;
 
 //Input
 .login-input {
-    height: 2.0em;
+    height: 2.1em;
     border-radius: 3px;
     border: 1px solid $blue_theme;
     transition: border 0.4s ease-out;
-    padding: 15px;
-    font-family:  Montserrat, sans-serif;
+    padding: 13px;
+    font-family: Oxygen, sans-serif;
     font-size: 19px;
     color: #3e3e42;
     background: rgba(15, 15, 15, 0.01);
@@ -123,29 +121,29 @@ $blue_theme: #8ed1f6;;
 
 //Input Placeholder
 .login-input::placeholder {
-    font-family:  Montserrat, sans-serif;
+    font-family: Oxygen, sans-serif;
     font-size: 16px; //color: rgba(46, 213, 116, 0.839);
     color: rgba(15, 15, 15, 0.4);
 }
 
 .login-btn {
-    padding: 2px 35px;
+    padding: 2px 30px;
     /* background-color: #417cef; */
     border: 0;
     font-size: 18px;
     border-radius: 3px;
-    font-family: Montserrat, sans-serif;
-    background-color: #00a894;
-    margin-top: 12px;
-    border: 2px solid gray;
+    font-family: Oxygen, sans-serif;
+    background-color: rgba(15, 15, 15, 0.03);
+    margin-top: 20px;
+    border: 2px solid #417cef;
     transition: background-color 0.3s ease-out;
     cursor: pointer;
 }
 
 .login-btn:hover,
 .login-btn:focus {
-    background-color:  #009688;
-    color: #009688;
+    background-color: #417cef;
+    color: white;
 }
 
 .danger-error {

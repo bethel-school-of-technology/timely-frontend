@@ -253,9 +253,6 @@ class SalesForm extends React.Component {
     render() {
         const { errors } = this.state;
         return <div className="root-container"> 
-
-        <br></br><br></br><br></br><br></br><br></br><br></br>
-        
            <h1 style={{ color: "#009688" }}>Input Weekly Sales</h1>
         <br></br>
             <div className="inner-container">
@@ -291,7 +288,7 @@ class SalesForm extends React.Component {
                 type="date"
               />
             </div>
-            <br></br>
+            
             {
               //mondays Sales
             }
@@ -318,7 +315,7 @@ class SalesForm extends React.Component {
                 type="date"
               />
             </div>
-            <br></br>
+            
             {
               //tuesdays sales
             }
@@ -346,7 +343,7 @@ class SalesForm extends React.Component {
                 type="date"
               />
             </div>
-            <br></br>
+            
             {
               //wednesdays sales
             }
@@ -374,7 +371,7 @@ class SalesForm extends React.Component {
                 type="date"
               />
             </div>
-            <br></br>
+            
             {
               //thursday sales
             }
@@ -402,7 +399,7 @@ class SalesForm extends React.Component {
                 type="date"
               />
             </div>
-            <br></br>
+            
             {
               //friday sales
             }
@@ -431,7 +428,7 @@ class SalesForm extends React.Component {
                 type="date"
               />
             </div>
-            <br></br>
+            
             {
               //saturday sales
             }
@@ -458,8 +455,8 @@ class SalesForm extends React.Component {
                 id="saturdayDate"
                 type="date"
               />
-            </div> <br></br>
-            <button 
+            </div> 
+            <button
               className="login-btn"
               type="submit"
               onClick={this.onPostSun}
