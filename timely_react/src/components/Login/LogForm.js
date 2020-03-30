@@ -65,10 +65,10 @@ class LoginForm extends React.Component {
     return <div className="root-container">
       <div className="inner-container">
         <div className="box-header">
-          <br/> <br/> <br/> <br/> <br/><br></br><br></br><br></br>
-          <h1 style={{textAlign:'center',color:'#009688'}}>Login Here</h1>
-        <br/>
-                </div>
+          <br /> <br /> <br /> <br /> <br /><br></br><br></br><br></br>
+          <h1 style={{ textAlign: 'center', color: '#009688' }}>Login Here</h1>
+          <br />
+        </div>
 
 
         {(!this.state.token || this.state.token === "")
@@ -92,11 +92,11 @@ class LoginForm extends React.Component {
 
 
               <div className="input-group">
-                <label htmlFor="password">Create Password</label>
+                <label htmlFor="password">Password</label>
 
                 <input className="login-input"
                   name="password"
-                  placeholder="Create Password"
+                  placeholder="Password"
                   onChange={this.onChange}
                   value={this.state.password}
                   error={errors.password}
@@ -104,10 +104,10 @@ class LoginForm extends React.Component {
                   type="password" />
               </div>
 
-              <Link to="/home" className="login-btn2"><button
+              <Link to="/home" ><button className="login-btn2"
                 type="submit"
                 onClick={this.props.onLogin}>Login</button></Link>
-             {/* <input type="button" value={this.state.loggedIn ? 'log out': 'log in' } onClick={this.loginHandle.bind(this)}/> */}
+              {/* <input type="button" value={this.state.loggedIn ? 'log out': 'log in' } onClick={this.loginHandle.bind(this)}/> */}
             </form>
 
             //here is where (I HOPE) it is saying, if the token matches, then render the Home page

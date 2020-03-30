@@ -10,13 +10,13 @@ class Register extends React.Component {
         return (
             <div>
                 <div>
-                    <RegForm uri="http://localhost:8080/register"/>
+                    <RegForm uri="http://localhost:8080/register" />
                 </div>
-            {/* <br></br>
+                {/* <br></br>
             <br></br>
                 {/* <div>
                     <LogLink/>
-                </div> */} */}
+                </div> */}
             </div>
         );
     }

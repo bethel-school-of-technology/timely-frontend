@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../Styles/sales.css';
-import axios from 'axios';
+
 
 
 class AverageSales extends React.Component {

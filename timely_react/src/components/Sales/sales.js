@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../Styles/sales.css';
-import axios from 'axios';
 
 
 class Sales extends React.Component {

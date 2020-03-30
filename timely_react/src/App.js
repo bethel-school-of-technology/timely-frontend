@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Router} from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
@@ -13,52 +13,52 @@ import './App.css';
 class App extends Component {
   state = {
     sideDrawerOpen: false
-    }
+  }
 
-    // state = {
-    //   loggedIn:false
-    // }
+  // state = {
+  //   loggedIn:false
+  // }
 
-    // <input type="button" value={this.state.loggedIn ? 'log out': 'log in' } onClick={this.loginHandle.bind(this)}/>
+  // <input type="button" value={this.state.loggedIn ? 'log out': 'log in' } onClick={this.loginHandle.bind(this)}/>
 
-    // loginHandle = () => {
-    //   this.setState(prevState => ({
-     // loggidIn: !prevState.loggedIn
-    // }))
-    // }
+  // loginHandle = () => {
+  //   this.setState(prevState => ({
+  // loggidIn: !prevState.loggedIn
+  // }))
+  // }
 
   // }
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {
-      return {sideDrawerOpen: !prevState.sideDrawerOpen};
+      return { sideDrawerOpen: !prevState.sideDrawerOpen };
     });
-    
+
   };
 
   backdropClickHandler = () => {
-    this.setState({sideDrawerOpen: false});
+    this.setState({ sideDrawerOpen: false });
   };
 
   render() {
-   let backdrop;
-   
+    let backdrop;
+
     if (this.state.sideDrawerOpen) {
       backdrop = <Backdrop click={this.backdropClickHandler} />
     }
-  return (
-    
-    <div style={{height: '100%'}}>
-      <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
-      <SideDrawer show={this.state.sideDrawerOpen} />
-      {backdrop}
-     
-      <Router history={history}>
-         <Routes />
-      </Router>
-      
-   </div>
-  ); 
- }
+    return (
+
+      <div style={{ height: '100%' }}>
+        <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+        <SideDrawer show={this.state.sideDrawerOpen} />
+        {backdrop}
+
+        <Router history={history}>
+          <Routes />
+        </Router>
+
+      </div>
+    );
+  }
 }
 
 export default App;
