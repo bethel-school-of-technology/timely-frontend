@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     background: #222;
-    height: 70px;
+    height: 80px;
     border: #00baa5;
     border-style: ridge;
     
@@ -54,7 +54,14 @@
 }
 
 .image1 {
-    padding: 0 1rem;
+    max-width: 4em;
+    align-items: bottom;
+    
+
+}
+
+.tspan {
+    padding: 0.6em;
     margin-right: 1; 
     align-items: center;
     

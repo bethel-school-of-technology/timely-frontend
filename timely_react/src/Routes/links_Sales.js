@@ -18,11 +18,11 @@ export default function SaLinks() {
         }}>
          <form>  
              <br></br> 
-        <button className="Button7">
+             <Link to="/addSales"><button className="Button7">
             
-            <nav><Link to="/addSales">Input Past Sales</Link></nav>
+            <nav>Input Past Sales</nav>
             
-            </button>
+            </button></Link>
             
             <div>
                 <Route path="/addSales" component={AddSales} />

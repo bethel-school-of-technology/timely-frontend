@@ -8,34 +8,40 @@ const toolbar = props => (
   <div>
     <header className="toolbar">
 
-        <nav className="toolbar__navigation">
+      
 
-            <div className="toolbar__toggle-button">
-              <DrawerToggleButton click={props.drawerClickHandler} />
-            </div>
+      <nav className="toolbar__navigation">
 
-            <div className="toolbar__logo">
-           <a href="/">Timely</a> <span className="image1"><img src="./images/TML.png" width="37" alt="logo" /></span>
-             
-            </div>
+        <div className="toolbar__toggle-button">
+          <DrawerToggleButton click={props.drawerClickHandler} />
+        </div>
+        
 
-            <div className="spacer" />
+        <div className="toolbar__logo">
+          <a href="/">Timely</a>
+        </div>
 
-            <div className="toolbar_navigation-items">
+        <span className="tspan"></span>
 
-              <ul>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/register">Register</a></li> 
-                <li><a href="/login">Login</a></li>     
-              </ul>
-              
-            </div>
-            
-        </nav>
+        <img src="./images/TML.png"  alt="logo" class="image1" />
+
+        <div className="spacer" />
+
+        <div className="toolbar_navigation-items">
+
+          <ul>
+            {/* <li><a href="/home">Home</a></li> */}
+            <li><a href="/register">Register</a></li>
+            <li><a href="/login">Login</a></li>
+          </ul>
+
+        </div>
+
+      </nav>
     </header>
- 
 
- </div>
+
+  </div>
 );
 
 export default toolbar;

@@ -26,11 +26,8 @@ class AddSales extends React.Component{
                 display: "flex",
                 justifyContent: "center"
             }}>
-            <button
-             className="Button6">
-              
-            <nav><Link to="/sales">Sales Page</Link></nav>
-            </button>
+                
+            <Link to="/sales"><button className="Button6"> <nav>  Sales Page  </nav> </button></Link>
             <div>
                 
             <Route path="/sales" component={SalesPage} />
