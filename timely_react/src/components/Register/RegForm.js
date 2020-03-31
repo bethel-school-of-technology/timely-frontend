@@ -69,7 +69,7 @@ class RegForm extends React.Component {
         return <div className="root-container">
             <div className="inner-container">
                 <div className="box-header">
-                    <br /><br></br><br></br><br></br><br></br><br></br><br></br>
+                    <br /><br></br><br></br><br></br><br></br><br></br>
                     <h1 style={{ textAlign: 'center', color: '#009688' }}>Register Here</h1>  <br />
                 </div>
 
@@ -163,8 +163,9 @@ class RegForm extends React.Component {
                     <Link to="/login" ><button
                         className="login-btn2"
                         type="submit" onClick={this.onRegister}>Register</button></Link>
-
+                    
                 </form>
+                <br></br><br></br><br></br>
             </div>
         </div>
     }
