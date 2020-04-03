@@ -11,12 +11,12 @@ const toolbar = props => (
       
 
       <nav className="toolbar__navigation">
-
+                    {/* //the next div should not be visible on bigger screens. */}
         <div className="toolbar__toggle-button">
           <DrawerToggleButton click={props.drawerClickHandler} />
         </div>
         
-
+          
         <div className="toolbar__logo">
           <a href="/">Timely</a>
         </div>

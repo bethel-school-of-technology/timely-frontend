@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     background: #222;
-    height: 80px;
+    height: 75px;
     border: #00baa5;
     border-style: ridge;
     
@@ -17,7 +17,7 @@
     padding: 0 2rem;
   
 }
-
+/* //spacing between hamburger icon and logo */
 .toolbar__logo {
     margin-left: 1.0rem;
     
@@ -40,7 +40,7 @@
 .toolbar_navigation-items li {
     padding: 0 1rem;
     float: left;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
 .spacer {
@@ -72,13 +72,15 @@
 .toolbar_navigation-items a:active {
     color: white;
 }
-
+/* //below this mark display to none.  They will only show on desktop. */
 @media (max-width: 768px) {
     .toolbar_navigation-items {
         display: none;
     }
 }
 
+/* //minimum with will display nothing. */
+/* //Will not have it on large screens, but will have on small screens. */
 @media (min-width: 769px) {
     .toolbar__toggle-button {
         display: none;

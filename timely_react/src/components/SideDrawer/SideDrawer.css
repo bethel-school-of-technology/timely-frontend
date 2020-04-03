@@ -48,6 +48,7 @@
   color: #84f0e1;  
 }
 
+/* // if at the minimum with below, then sidedrawer will display none, it will not show. */
 @media (min-width: 769px) {
     .side-drawer {
         display: none;

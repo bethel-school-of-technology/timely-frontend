@@ -70,7 +70,7 @@ class RegForm extends React.Component {
             <div className="inner-container">
                 <div className="box-header">
                     <br /><br></br><br></br><br></br><br></br><br></br>
-                    <h1 style={{ textAlign: 'center', color: '#009688' }}>Register Here</h1>  <br />
+                    <h1 style={{ textAlign: 'center', color: '#009688' }}>Register</h1>  <br />
                 </div>
 
                 <form onSubmit={this.onSubmit}

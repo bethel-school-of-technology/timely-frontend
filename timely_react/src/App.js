@@ -15,19 +15,6 @@ class App extends Component {
     sideDrawerOpen: false
   }
 
-  // state = {
-  //   loggedIn:false
-  // }
-
-  // <input type="button" value={this.state.loggedIn ? 'log out': 'log in' } onClick={this.loginHandle.bind(this)}/>
-
-  // loginHandle = () => {
-  //   this.setState(prevState => ({
-  // loggidIn: !prevState.loggedIn
-  // }))
-  // }
-
-  // }
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {
       return { sideDrawerOpen: !prevState.sideDrawerOpen };

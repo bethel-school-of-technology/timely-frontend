@@ -14,6 +14,7 @@ export default function HomLinks() {
         
         
         <div> <br/> <br/> <br/> <br/> <br/> <br/><br></br><br></br>
+
  <h1 style={{textAlign:'center',color:'#009688'}}>Add Sales or Lookup Past Sales</h1> <br/> <br/> <br/>
 
           

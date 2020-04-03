@@ -66,7 +66,7 @@ class LoginForm extends React.Component {
       <div className="inner-container">
         <div className="box-header">
           <br /> <br /> <br /> <br /> <br /><br></br><br></br><br></br>
-          <h1 style={{ textAlign: 'center', color: '#009688' }}>Login Here</h1>
+          <h1 style={{ textAlign: 'center', color: '#009688' }}>Login</h1>
           <br />
         </div>
 

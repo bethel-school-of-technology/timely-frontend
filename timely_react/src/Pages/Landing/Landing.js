@@ -17,7 +17,7 @@ render() {
          {/* <p>logo here?</p> */}
          
           </div>
-          {/* <img src="./images/TML.png" width="37" alt="logo" /> */}
+          {/* <img src="./images/Timely.png" width="850" alt="logo" /> */}
            </section> 
    
          </main>
