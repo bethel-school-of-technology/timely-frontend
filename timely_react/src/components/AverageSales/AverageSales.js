@@ -54,18 +54,43 @@ Average() {
         })
     }
 
+    LaborCost() {
+        return this.state.average.map((average) => {
+            const {date, dailySales, weekDay} = average;
+            var result = dailySales / 100;
+            return(
+                <td>
+                <td key={average}>
+                <tr style={{fontWeight: "bolder"}}>{weekDay}</tr>
+                    <tr id="date">{date}</tr>
+                    <tr id="money">${result}</tr>
+                </td>
+                </td>
+            )
+        })
+    }
+
 
     render() {
        
     return (
+        <div>
         <div id="body">
             <h1 id="title">Sales Forecast</h1>
             <table id="sales">
                 <tbody>
-                    <td>{this.Average()}</td>
-
+                    <tr>{this.Average()}</tr>
                 </tbody>
             </table>
+        </div>
+        <div id="body">
+            <h1 id="title">Estimated Labor Cost</h1>
+            <table id="sales">
+                <tbody>
+                   <tr>{this.LaborCost()}</tr>
+                </tbody>
+            </table>
+        </div>
         </div>
     )
     //you can only return ONE element so by using a div, its ONE element containin MANY elements(children). Use a parent to display children when limited to using one

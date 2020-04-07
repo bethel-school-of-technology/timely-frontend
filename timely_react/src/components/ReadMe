@@ -5,3 +5,35 @@ Be sure to name them specific enough to refer to but not too length.
 each component will be called into the page they belong to.
 
 the Pages file will call the each component
+
+
+
+
+
+
+
+
+
+https://www.w3resource.com/javascript-exercises/javascript-math-exercise-32.php
+
+https://stackoverflow.com/questions/30922008/calculate-percentage-javascript
+
+
+
+
+
+code to produce result of % of given number
+		function percentage()
+		{
+			var a = Number(document.getElementById("t1").value);
+			var b = Number(document.getElementById("t2").value) / 100;
+			alert(a*b);		
+		}
+	</script>
+</head>
+<body>
+<strong>What is <input name="" id="t1"> % of
+<input name="" id="t2"> ?
+</strong><br><br>
+<button class = "button" onclick="percentage()">Calculate Percentage</button>
+</body>
