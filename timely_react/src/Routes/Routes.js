@@ -8,13 +8,11 @@ import SalesPage from '../Pages/Sales/Sales';
 import AddSales from '../Pages/AddSales/AddSales';
 import Register from '../Pages/Register/Register';
 
-
 export default function Routes() {
     return <Switch>
-        <Route path="/" exact component={Login} />
         <Route path="/login" component={Login}  />
         
-
+        
         <Route path="/home" component={HomePage} />
         <Route path="/sales" component={SalesPage} />
         <Route path="/addSales" component={AddSales} />

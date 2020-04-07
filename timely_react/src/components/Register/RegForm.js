@@ -15,6 +15,7 @@ class RegForm extends React.Component {
             errors: {}
         };
     }
+    
 
     onRegister = () => {
         fetch("http://localhost:8080/api/user/register", {
@@ -67,10 +68,11 @@ class RegForm extends React.Component {
         const { errors } = this.state;
         return <div className="root-container">
             <div className="inner-container">
-                <div className="box-header">
-                    Register
+                <div className="box-header"> 
+                <br/>
+                <h1 style={{textAlign:'center',color:'#009688'}}>Register Here</h1>  <br/>
                 </div>
-
+                
                 <form onSubmit={this.onSubmit}
                     className="box">
 
@@ -87,7 +89,7 @@ class RegForm extends React.Component {
                             type="text"
                         />
                     </div>
-
+                    
                     <div className="input-group">
                         <label htmlFor="lastName">Last Name</label>
 
@@ -101,9 +103,9 @@ class RegForm extends React.Component {
                             type="text"
                         />
                     </div>
-
+                    
                     <div className="input-group">
-                        <label htmlFor="username">Username</label>
+                        <label htmlFor="username">UserName</label>
 
                         <input className="login-input"
                             name="username"
@@ -115,7 +117,7 @@ class RegForm extends React.Component {
                             type="text"
                         />
                     </div>
-
+                    
 
                     <div className="input-group">
                         <label htmlFor="email">Email</label>
@@ -130,7 +132,7 @@ class RegForm extends React.Component {
                             type="email" />
                     </div>
 
-
+                    
                     <div className="input-group">
                         <label htmlFor="company">Company</label>
 
@@ -144,7 +146,7 @@ class RegForm extends React.Component {
                             type="text" />
                     </div>
 
-
+                    
                     <div className="input-group">
                         <label htmlFor="password">Create Password</label>
 
@@ -157,7 +159,7 @@ class RegForm extends React.Component {
                             id="password"
                             type="password" />
                     </div>
-
+                    
                     <Link to="/login" className="login-btn"><button
                         className="login-btn"
                         type="submit" onClick={this.onRegister}>Register</button></Link>

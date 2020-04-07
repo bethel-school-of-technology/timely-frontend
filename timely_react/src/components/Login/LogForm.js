@@ -30,7 +30,6 @@ class LoginForm extends React.Component {
       .then(token => {
         if (token) {
           this.setState({ ...this.state, token: token })
-          .then();
         } else {
           this.setState({ ...this.state, error: "Unable to login with username and password." });
         }
@@ -66,7 +65,9 @@ class LoginForm extends React.Component {
     return <div className="root-container">
       <div className="inner-container">
         <div className="box-header">
-          Register
+        <br/> <br/> <br/> <br/> <br/>
+          <h1 style={{textAlign:'center',color:'#009688'}}>Login Here</h1>
+        <br/>
                 </div>
 
 
@@ -103,9 +104,9 @@ class LoginForm extends React.Component {
                   type="password" />
               </div>
 
-              <Link to="/home" className="login-btn"><button
+              <button className="login-btn"
                 type="submit"
-                onClick={this.props.onLogin}>Login</button></Link>
+                onClick={this.props.onLogin}>Login</button>
             </form>
 
             //here is where (I HOPE) it is saying, if the token matches, then render the Home page
