@@ -2,23 +2,26 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 //routing imports
-import Login from '../Pages/Login/Login';
+import Login from "../components/Login/login.component";
 import HomePage from '../Pages/Home/Home';
 import SalesPage from '../Pages/Sales/Sales';
 import AddSales from '../Pages/AddSales/AddSales';
-import Register from '../Pages/Register/Register';
+import Registers from "../components/Register/register.component";
 import Landing from '../Pages/Landing/Landing';
+import Profile from '../components/Profile/profile.component';
+import AuthService from "../Services/auth.service";
 
 export default function Routes() {
     return <Switch>
         <Route path="/" exact component={Landing} />
-        <Route path="/login" component={Login}  />
+        <Route exact path="/login" component={Login} />
         
         
         <Route path="/home" component={HomePage} />
         <Route path="/sales" component={SalesPage} />
         <Route path="/addSales" component={AddSales} />
-        <Route path="/register" component={Register}/>
+        <Route exact path="/register" component={Registers} />
+        <Route exact path="/profile" component={Profile} />
         <Route component={Login} />
     </Switch>
 }

@@ -1,124 +1,124 @@
-import React from 'react';
+// import React from 'react';
 
-import { Link, Route, } from 'react-router-dom';
-import Home from '../../Pages/Home/Home';
+// import { Link, Route, } from 'react-router-dom';
+// import Home from '../../Pages/Home/Home';
 
-import '../../Styles/Styles.scss';
+// import '../../Styles/Styles.scss';
 
-class LoginForm extends React.Component {
+// class LoginForm extends React.Component {
 
-  //properties being passed to the backend
-  //token for authorization, username and password for verification to recieve a token
-  constructor() {
-    super();
-    this.state = {
-      token: "",
-      username: "",
-      password: "",
-      errors: {}
-    };
-  }
+//   //properties being passed to the backend
+//   //token for authorization, username and password for verification to recieve a token
+//   constructor() {
+//     super();
+//     this.state = {
+//       token: "",
+//       username: "",
+//       password: "",
+//       errors: {}
+//     };
+//   }
 
-  //API to back end initiated by the onLogin function
-  onLogin = () => {
-    fetch("http://localhost:8080/login", {
-      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-      method: "POST",
-      body: JSON.stringify({ username: this.state.username, password: this.state.password })
-    })
-      .then(res => res.headers.get("authorization"))
-      .then(token => {
-        if (token) {
-          this.setState({ ...this.state, token: token })
-        } else {
-          this.setState({ ...this.state, error: "Unable to login with username and password." });
-        }
-      });
-  }
-
-
-  //onChange ties in the form values to the components state
-  onChange = e => {
-    this.setState({ [e.target.id]: e.target.value });
-  };
+//   //API to back end initiated by the onLogin function
+//   onLogin = () => {
+//     fetch("http://localhost:8080/login", {
+//       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+//       method: "POST",
+//       body: JSON.stringify({ username: this.state.username, password: this.state.password })
+//     })
+//       .then(res => res.headers.get("authorization"))
+//       .then(token => {
+//         if (token) {
+//           this.setState({ ...this.state, token: token })
+//         } else {
+//           this.setState({ ...this.state, error: "Unable to login with username and password." });
+//         }
+//       });
+//   }
 
 
-  //prevent default stops re-rendering of page//
-  onSubmit = e => {
-    e.preventDefault();
+//   //onChange ties in the form values to the components state
+//   onChange = e => {
+//     this.setState({ [e.target.id]: e.target.value });
+//   };
 
 
-
-    // User is only for console log. doesnt really go anywhere except testing
-    const user = {
-      username: this.state.username,
-      password: this.state.password,
-    };
-
-    console.log(user);
-  };
+//   //prevent default stops re-rendering of page//
+//   onSubmit = e => {
+//     e.preventDefault();
 
 
 
-  render() {
-    const { errors } = this.state;
-    return <div className="root-container">
-      <div className="inner-container">
-        <div className="box-header">
-          <br /> <br /> <br /> <br /> <br /><br></br><br></br><br></br>
-          <h1 style={{ textAlign: 'center', color: '#009688' }}>Login</h1>
-          <br />
-        </div>
+//     // User is only for console log. doesnt really go anywhere except testing
+//     const user = {
+//       username: this.state.username,
+//       password: this.state.password,
+//     };
+
+//     console.log(user);
+//   };
 
 
-        {(!this.state.token || this.state.token === "")
-          ? (
-            //here is where i believe the token should go saying IF the token is empty, render the form
-            <form onSubmit={this.onSubmit}
-              className="box">
 
-              <div className="input-group">
-                <label htmlFor="username">Username</label>
-
-                <input className="login-input"
-                  name="username"
-                  placeholder="Username"
-                  onChange={this.onChange}
-                  value={this.state.username}
-                  error={errors.username}
-                  id="username"
-                  type="text" />
-              </div>
+//   render() {
+//     const { errors } = this.state;
+//     return <div className="root-container">
+//       <div className="inner-container">
+//         <div className="box-header">
+//           <br /> <br /> <br /> <br /> <br /><br></br><br></br><br></br>
+//           <h1 style={{ textAlign: 'center', color: '#009688' }}>Login</h1>
+//           <br />
+//         </div>
 
 
-              <div className="input-group">
-                <label htmlFor="password">Password</label>
+//         {(!this.state.token || this.state.token === "")
+//           ? (
+//             //here is where i believe the token should go saying IF the token is empty, render the form
+//             <form onSubmit={this.onSubmit}
+//               className="box">
 
-                <input className="login-input"
-                  name="password"
-                  placeholder="Password"
-                  onChange={this.onChange}
-                  value={this.state.password}
-                  error={errors.password}
-                  id="password"
-                  type="password" />
-              </div>
+//               <div className="input-group">
+//                 <label htmlFor="username">Username</label>
 
-              <Link to="/home" ><button className="login-btn2"
-                type="submit"
-                onClick={this.props.onLogin}>Login</button></Link>
-              {/* <input type="button" value={this.state.loggedIn ? 'log out': 'log in' } onClick={this.loginHandle.bind(this)}/> */}
-            </form>
-
-            //here is where (I HOPE) it is saying, if the token matches, then render the Home page
-
-            //ISSUE--- it will auto direct you to the home path.
-            //We need to make it authorized routing. not auto routing
-          ) : (<Link><Route exact path="/home" component={Home} /></Link>)}
-      </div>
-    </div>
-  }
-}
+//                 <input className="login-input"
+//                   name="username"
+//                   placeholder="Username"
+//                   onChange={this.onChange}
+//                   value={this.state.username}
+//                   error={errors.username}
+//                   id="username"
+//                   type="text" />
+//               </div>
 
 
-export default LoginForm;
+//               <div className="input-group">
+//                 <label htmlFor="password">Password</label>
+
+//                 <input className="login-input"
+//                   name="password"
+//                   placeholder="Password"
+//                   onChange={this.onChange}
+//                   value={this.state.password}
+//                   error={errors.password}
+//                   id="password"
+//                   type="password" />
+//               </div>
+
+//               <Link to="/home" ><button className="login-btn2"
+//                 type="submit"
+//                 onClick={this.props.onLogin}>Login</button></Link>
+//               {/* <input type="button" value={this.state.loggedIn ? 'log out': 'log in' } onClick={this.loginHandle.bind(this)}/> */}
+//             </form>
+
+//             //here is where (I HOPE) it is saying, if the token matches, then render the Home page
+
+//             //ISSUE--- it will auto direct you to the home path.
+//             //We need to make it authorized routing. not auto routing
+//           ) : (<Link><Route exact path="/home" component={Home} /></Link>)}
+//       </div>
+//     </div>
+//   }
+// }
+
+
+// export default LoginForm;

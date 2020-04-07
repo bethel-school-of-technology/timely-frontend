@@ -1,20 +1,58 @@
 import React, { Component } from 'react';
-import { Router } from 'react-router-dom';
-import ReactDOM from 'react-dom';
+import './App.css';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+// import ReactDOM from 'react-dom';
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 import Routes from './Routes/Routes';
 import history from './Services/Services';
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import AuthService from "./Services/auth.service";
 
-import './App.css';
+import Login from "./components/Login/login.component";
+import Registers from "./components/Register/register.component";
+import Landing from "./Pages/Landing/Landing";
+import HomePage from "./Routes/links_Home";
+import SalesPage from "./Pages/Sales/Sales";
+import AddSales from "./Pages/AddSales/AddSales";
+import Profile from "./Pages/Profile/ProfilePage";
+{/* <Route path="/" exact component={Landing} />
+<Route exact path="/login" component={Login} /> */}
+
+
+// <Route path="/home" component={HomePage} />
+// <Route path="/sales" component={SalesPage} />
+// <Route path="/addSales" component={AddSales} />
+// <Route exact path="/register" component={Register} />
+// <Route exact path="/profile" component={Profile} />
+// <Route component={Login} />
+
+
+
 
 class App extends Component {
-  state = {
-    sideDrawerOpen: false
+  constructor(props) {
+    super(props);
+    this.logOut = this.logOut.bind(this);
+
+    this.state = {
+      currentUser: undefined,
+      sideDrawerOpen: false
+    };
   }
 
+  componentDidMount() {
+    const user = AuthService.getCurrentUser();
+
+    if (user) {
+      this.setState({
+        currentUser: AuthService.getCurrentUser()
+      });
+    }
+  }
+ 
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {
       return { sideDrawerOpen: !prevState.sideDrawerOpen };
@@ -26,23 +64,122 @@ class App extends Component {
     this.setState({ sideDrawerOpen: false });
   };
 
+
+
+  logOut() {
+    AuthService.logout();
+  }
+
   render() {
+    const { currentUser } = this.state;
     let backdrop;
 
     if (this.state.sideDrawerOpen) {
       backdrop = <Backdrop click={this.backdropClickHandler} />
     }
+
     return (
+      <div>
 
-      <div style={{ height: '100%' }}>
-        <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
-        <SideDrawer show={this.state.sideDrawerOpen} />
-        {backdrop}
+        <div style={{ height: '100%' }}>
+          <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+          <SideDrawer show={this.state.sideDrawerOpen} />
+          {backdrop}
+        </div>
 
-        <Router history={history}>
-          <Routes />
-        </Router>
+        <div>
+          <BrowserRouter>
+            <div>
+              <header className="toolbar">
+                <nav className="toolbar__navigation">
+                  <div className="toolbar__logo">
+                    <a href="/">Timely</a>
+                  </div>
 
+                  <span className="tspan"></span>
+
+                  <img src="./images/TML.png" alt="logo" class="image1" />
+
+                  <div className="spacer" />
+
+                  <div>
+
+                    {currentUser && (
+                      <li className="nav-item">
+                        <Link to={"/sales"} >
+                          Sales
+                  </Link>
+                      </li>
+                    )}
+
+                    {currentUser && (
+                      <li className="nav-item">
+                        <Link to={"/addSales"} >
+                          Input Sales
+                  </Link>
+                      </li>
+                    )}
+
+                  </div>
+
+                  {currentUser ? (
+                    <div>
+
+                      <li className="nav-item">
+                        <Link to={"/profile"} >
+                          {currentUser.username}
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <a href="/landing" onClick={this.logOut}>
+                          Logout
+                  </a>
+                      </li>
+
+                    </div>
+                  ) : (
+                      <div >
+
+                        <li className="nav-item">
+                          <Link to={"/login"} >
+                            Login
+                  </Link>
+                        </li>
+
+                        <li className="nav-item">
+                          <Link to={"/register"} >
+                            Register
+                  </Link>
+                        </li>
+
+                        {/* <Router history={history}>
+                  <Routes />
+               </Router> */}
+                      </div>
+                    )}
+                </nav>
+              </header>
+
+
+
+              <div className="container mt-3">
+                <Switch>
+                  <Route path={["/", "/landing"]} exact component={Landing} />
+                  <Route exact path="/login" component={Login} />
+
+
+                  <Route path="/home" component={HomePage} />
+                  <Route path="/sales" component={SalesPage} />
+                  <Route path="/addSales" component={AddSales} />
+                  <Route exact path="/register" component={Registers} />
+                  <Route exact path="/profile" component={Profile} />
+                  <Route component={Login} />
+                </Switch>
+
+              </div>
+            </div>
+          </BrowserRouter>
+        </div>
       </div>
     );
   }

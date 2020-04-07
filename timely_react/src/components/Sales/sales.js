@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../Styles/sales.css';
+import userService from '../../Services/user.service';
 
 
 class Sales extends React.Component {
@@ -133,11 +134,8 @@ class Sales extends React.Component {
     }
 
 componentDidMount() {
-    fetch("http://localhost:8080/sales", {
-        headers: { 'Authorization': this.state.token }
-      })
-      .then(response => response.json())
-      .then(data => console.log(data));
+    userService.getEstimatedSales();
+    userService.getSales();
 }
 
 

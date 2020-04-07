@@ -1,4 +1,17 @@
 import React from "react";
+import Form from "react-validation/build/form";
+import Input from "react-validation/build/input";
+import CheckButton from "react-validation/build/button";
+import UserService from "../../Services/user.service"
+const required = value => {
+  if (!value) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        This field is required!
+      </div>
+    );
+  }
+};
 
 class SalesForm extends React.Component {
   constructor() {
@@ -248,7 +261,38 @@ class SalesForm extends React.Component {
       saturdayDate: this.state.saturdayDate
     };
   console.log(newSales);
+  this.form.validateAll();
+  if (this.checkBtn.context._errors.length === 0) {
+    UserService.postSunSales(
+      this.state.sundaySales,
+      this.state.sundayDate
+    );
+    UserService.postMonSales(
+      this.state.mondaySales,
+      this.state.mondayDate,
+    );
+    UserService.postTueSales(
+      this.state.tuesdaySales,
+      this.state.tuesdayDate,
+    );
+    UserService.postWedSales(
+      this.state.wednesdaySales,
+      this.state.wednesdayDate,
+    );
+    UserService.postThuSales(
+      this.state.thursdaySales,
+      this.state.thursdayDate,
+    );
+    UserService.postFriSales(
+      this.state.fridaySales,
+      this.state.fridayDate,
+    );
+    UserService.postSatSales(
+      this.state.saturdaySales,
+      this.state.saturdayDate,
+    );
   };
+};
 
     render() {
         const { errors } = this.state;
@@ -262,7 +306,10 @@ class SalesForm extends React.Component {
                 <div className="box-header">
                 </div>
 
-                <form onSubmit={this.onSubmit}
+                <Form onSubmit={this.onSubmit}
+                ref={c => {
+                  this.form = c;
+                }}
                     className="box">
             {
               //sunday sales
@@ -270,7 +317,7 @@ class SalesForm extends React.Component {
             <div className="input-group">
               <label htmlFor="sunday">Sunday's Sales</label>
 
-              <input
+              <Input
                 className="login-input"
                 name="sunday"
                 placeholder="Sunday's Sales"
@@ -279,9 +326,10 @@ class SalesForm extends React.Component {
                 error={errors.sundaySales}
                 id="sundaySales"
                 type="number"
+                validations={[required]}
               />
 
-              <input
+              <Input
                 className="login-input"
                 name="sunday"
                 onChange={this.onChange}
@@ -289,6 +337,7 @@ class SalesForm extends React.Component {
                 error={errors.sundayDate}
                 id="sundayDate"
                 type="date"
+                validations={[required]}
               />
             </div>
            
@@ -298,7 +347,7 @@ class SalesForm extends React.Component {
             <div className="input-group">
               <label htmlFor="monday">Monday's Sales</label>
 
-              <input
+              <Input
                 className="login-input"
                 name="monday"
                 placeholder="Monday Sales"
@@ -308,7 +357,7 @@ class SalesForm extends React.Component {
                 id="mondaySales"
                 type="number"
               />
-              <input
+              <Input
                 className="login-input"
                 name="date"
                 onChange={this.onChange}
@@ -325,7 +374,7 @@ class SalesForm extends React.Component {
             <div className="input-group">
               <label htmlFor="tuesday">Tuesday's Sales</label>
 
-              <input
+              <Input
                 className="login-input"
                 name="tuesday"
                 placeholder="Tuesday's Sales"
@@ -336,7 +385,7 @@ class SalesForm extends React.Component {
                 type="number"
               />
 
-              <input
+              <Input
                 className="login-input"
                 name="tuesday"
                 onChange={this.onChange}
@@ -353,7 +402,7 @@ class SalesForm extends React.Component {
             <div className="input-group">
               <label htmlFor="wednesday">Wednesday's Sales</label>
 
-              <input
+              <Input
                 className="login-input"
                 name="wednesday"
                 placeholder="Wednesday's Sales"
@@ -364,7 +413,7 @@ class SalesForm extends React.Component {
                 type="number"
               />
 
-              <input
+              <Input
                 className="login-input"
                 name="wednesday"
                 onChange={this.onChange}
@@ -381,7 +430,7 @@ class SalesForm extends React.Component {
             <div className="input-group">
               <label htmlFor="thursday">Thursday's Sales</label>
 
-              <input
+              <Input
                 className="login-input"
                 name="thursday"
                 placeholder="Thursday's Sales"
@@ -392,7 +441,7 @@ class SalesForm extends React.Component {
                 type="number"
               />
 
-              <input
+              <Input
                 className="login-input"
                 name="thursday"
                 onChange={this.onChange}
@@ -410,7 +459,7 @@ class SalesForm extends React.Component {
             <div className="input-group">
               <label htmlFor="friday">Friday's Sales</label>
 
-              <input
+              <Input
                 className="login-input"
                 name="friday"
                 placeholder="Friday's Sales"
@@ -421,7 +470,7 @@ class SalesForm extends React.Component {
                 type="number"
               />
 
-              <input
+              <Input
                 className="login-input"
                 name="friday"
                 onChange={this.onChange}
@@ -438,7 +487,7 @@ class SalesForm extends React.Component {
             <div className="input-group">
               <label htmlFor="saturday">Saturday's Sales</label>
 
-              <input
+              <Input
                 className="login-input"
                 name="saturday"
                 placeholder="Saturday's Sales"
@@ -462,12 +511,17 @@ class SalesForm extends React.Component {
             <button 
               className="login-btn2"
               type="submit"
-              onClick={this.onPostSun}
             >
               Submit
             </button>
             <br/>
-          </form>
+            <CheckButton
+              style={{ display: "none" }}
+              ref={c => {
+                this.checkBtn = c;
+              }}
+            />
+          </Form>
         </div>
       </div>
 };
