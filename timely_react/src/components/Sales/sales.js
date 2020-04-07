@@ -1,6 +1,5 @@
 import React from 'react';
-import './sales.css';
-import axios from 'axios';
+import '../../Styles/sales.css';
 
 
 class Sales extends React.Component {
@@ -133,6 +132,15 @@ class Sales extends React.Component {
         ]
     }
 
+componentDidMount() {
+    fetch("http://localhost:8080/sales", {
+        headers: { 'Authorization': this.state.token }
+      })
+      .then(response => response.json())
+      .then(data => console.log(data));
+}
+
+
 Sunday() {
         return this.state.sunday.map((sunday) => {
             const {date, dailySales} = sunday;
@@ -242,7 +250,11 @@ Saturday() {
        
     return (
         <div id="body">
-            <h1 id='title'>Last Month's Sales</h1>
+               
+           
+      <br></br><br></br><br></br><br></br><br></br>
+             <h1 style={{ color: "#009688" }}>Last Months Sales</h1>
+             <br></br> <br></br>
             <table id='sales'>
                 <tbody>
                     <tr>

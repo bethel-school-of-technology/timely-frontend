@@ -1,8 +1,0 @@
-Each page will call each component/function
-
-Pages can be used for styling but the functionality belongs to the components.
-
-Think of Pages act as a layering of functions which is a slice of a page.
-
-Each function is layered as the page being the background.
-refer to login page and how the borders display themselves relationally
