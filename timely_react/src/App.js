@@ -18,6 +18,7 @@ import HomePage from "./Routes/links_Home";
 import SalesPage from "./Pages/Sales/Sales";
 import AddSales from "./Pages/AddSales/AddSales";
 import Profile from "./Pages/Profile/ProfilePage";
+import DrawerToggleButton from './components/SideDrawer/DrawerToggleButton';
 {/* <Route path="/" exact component={Landing} />
 <Route exact path="/login" component={Login} /> */}
 
@@ -79,19 +80,25 @@ class App extends Component {
     }
 
     return (
-      <div>
-
-        <div style={{ height: '100%' }}>
-          <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+     
+          <div style={{ height: '100%' }}>
+         <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
           <SideDrawer show={this.state.sideDrawerOpen} />
           {backdrop}
-        </div>
+        {/* <div style={{ height: '100%' }}> */}
+          {/* <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+          <SideDrawer show={this.state.sideDrawerOpen} />
+          {backdrop} */}
+       
 
         <div>
           <BrowserRouter>
             <div>
               <header className="toolbar">
                 <nav className="toolbar__navigation">
+                <div className="toolbar__toggle-button">
+          <DrawerToggleButton click={this.props.drawerClickHandler} />
+        </div>
                   <div className="toolbar__logo">
                     <a href="/">Timely</a>
                   </div>
@@ -102,7 +109,7 @@ class App extends Component {
 
                   <div className="spacer" />
 
-                  <div>
+                  <div className="navbar-nav mr-auto">
 
                     {currentUser && (
                       <li className="nav-item">

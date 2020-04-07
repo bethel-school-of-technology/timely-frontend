@@ -17,7 +17,7 @@ import AuthService from "../../Services/auth.service";
       <div className="container">
         <header className="jumbotron">
           <h3>
-            <strong>Welcome{currentUser.username}!</strong>
+            <strong>Welcome {currentUser.username}!</strong>
           </h3>
         </header>
         <p>

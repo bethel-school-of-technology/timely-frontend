@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../Styles/sales.css';
 import userService from '../../Services/user.service';
+import axios from 'axios';
+import authHeader from '../../Services/auth-header'
 
 
 class Sales extends React.Component {
@@ -8,140 +10,44 @@ class Sales extends React.Component {
     state = {
 
         sunday: [
-            {
-                date: "2020-14-3", dailySales: 23456,
-                weekDay: "Sunday"
-            },
-            {
-                date: "2020-18-3", dailySales: 6785,
-                weekDay: "Sunday"
-            },
-            {
-                date: "2020-14-3", dailySales: 2345678,
-                weekDay: "Sunday"
-            },
-            {
-                date: "2020-18-3", dailySales: 456789,
-                weekDay: "Sunday"
-            }
         ],
         monday: [
-            {
-                date: "2020-12-14", dailySales: 3466, weekDay: "Monday"
-            },
-            {
-                date: "2020-10-3", dailySales: 984567,
-                weekDay: "Monday"
-            },
-            {
-                date: "2020-12-14", dailySales: 2345678, weekDay: "Monday"
-            },
-            {
-                date: "2020-10-3", dailySales: 87654,
-                weekDay: "Monday"
-            }
         ],
         tuesday: [
-            {
-                date:"2020-13-3", dailySales: 34756,
-                weekDay: "Tuesday"
-            },
-            {
-                date: "2020-19-3", dailySales: 5797,
-                weekDay: "Tuesday"
-            },
-            {
-                date:"2020-13-3", dailySales: 834604,
-                weekDay: "Tuesday"
-            },
-            {
-                date: "2020-19-3", dailySales: 6824684,
-                weekDay: "Tuesday"
-            }
         ],
         wednesday: [
-            {
-                date: "2020-14-3", dailySales: 23456,
-                weekDay: "Wednesday"
-            },
-            {
-                date: "2020-18-3", dailySales: 65489,
-                weekDay: "Wednesday"
-            },
-            {
-                date: "2020-14-3", dailySales: 518965,
-                weekDay: "Wednesday"
-            },
-            {
-                date: "2020-18-3", dailySales: 6785,
-                weekDay: "Wednesday"
-            }
         ],
         thursday: [
-            {
-                date: "2020-14-3", dailySales: 23456,
-                weekDay: "Thursday"
-            },
-            {
-                date: "2020-18-3", dailySales: 6785,
-                weekDay: "Thursday"
-            },
-            {
-                date: "2020-14-3", dailySales: 9478,
-                weekDay: "Thursday"
-            },
-            {
-                date: "2020-18-3", dailySales: 15199,
-                weekDay: "Thursday"
-            }
         ],
         friday: [
-            {
-                date: "2020-14-3", dailySales: 23456,
-                weekDay: "Friday"
-            },
-            {
-                date: "2020-18-3", dailySales: 6785,
-                weekDay: "Friday"
-            },
-            {
-                date: "2020-14-3", dailySales: 2365,
-                weekDay: "Friday"
-            },
-            {
-                date: "2020-18-3", dailySales: 88855,
-                weekDay: "Friday"
-            }
         ],
         saturday: [
-            {
-                date: "2020-14-3", dailySales: 23456,
-                weekDay: "Saturday"
-            },
-            {
-                date: "2020-18-3", dailySales: 6785,
-                weekDay: "Saturday"
-            },
-            {
-                date: "2020-14-3", dailySales: 85265,
-                weekDay: "Saturday"
-            },
-            {
-                date: "2020-18-3", dailySales: 798455,
-                weekDay: "Saturday"
-            }
         ]
     }
-
+    getSales() {
+        return axios.get('http://localhost:8080/api/sales', { headers: authHeader() })
+        .then(response => {
+            this.setState({
+                sunday: response.data,
+                monday: response.data,
+                tuesday: response.data,
+                wednesday: response.data,
+                thursday: response.data,
+                friday: response.data,
+                saturday: response.data
+            });
+        });
+         }
 componentDidMount() {
     userService.getEstimatedSales();
-    userService.getSales();
+    this.getSales();
 }
 
 
 Sunday() {
         return this.state.sunday.map((sunday) => {
-            const {date, dailySales} = sunday;
+            const {date, dailySales, weekDay} = sunday;
+            if (weekDay === "Sunday") {
             return(
                 <tr>
                 <td key={sunday}>
@@ -151,13 +57,15 @@ Sunday() {
                 </td>
                 </tr>
             )
+            }
         })
     }
 
 
 Monday() {
     return this.state.monday.map((monday) => {
-        const {date, dailySales} = monday;
+        const {date, dailySales, weekDay} = monday;
+        if (weekDay === "Monday") {
         return(
             <tr>
             <td key={monday}>
@@ -167,12 +75,14 @@ Monday() {
             </td>
             </tr>
         )
+        }
     })
 }
 
 Tuesday() {
     return this.state.tuesday.map((tuesday) => {
-        const {date, dailySales} = tuesday;
+        const {date, dailySales, weekDay} = tuesday;
+        if (weekDay === "Tuesday") {
         return(
             <tr>
             <td key={tuesday}>
@@ -182,12 +92,14 @@ Tuesday() {
             </td>
             </tr>
         )
+        }
     })
 }
 
 Wednesday() {
     return this.state.wednesday.map((wednesday) => {
-        const {date, dailySales} = wednesday;
+        const {date, dailySales, weekDay} = wednesday;
+        if (weekDay === "Wednesday") {
         return(
             <tr>
             <td key={wednesday}>
@@ -197,11 +109,13 @@ Wednesday() {
             </td>
             </tr>
         )
+        }
     })
 }
 Thursday() {
     return this.state.thursday.map((thursday) => {
-        const {date, dailySales} = thursday;
+        const {date, dailySales, weekDay} = thursday;
+        if (weekDay === "Thursday") {
         return(
             <tr>
             <td key={thursday}>
@@ -211,25 +125,29 @@ Thursday() {
             </td>
             </tr>
         )
+        }
     })
 }
 Friday() {
     return this.state.friday.map((friday) => {
-        const {date, dailySales} = friday;
+        const {date, dailySales, weekDay} = friday;
+        if (weekDay === "Friday") {
         return(
           <tr>
             <td key={friday}>
-                <tr style={{fontWeight: "bolder"}}>friday</tr>
+                <tr style={{fontWeight: "bolder"}}>Friday</tr>
                 <td id="date">{date}</td>
                 <tr id="money">${dailySales}</tr>
             </td>
             </tr>
         )
+        }
     })
 }
 Saturday() {
     return this.state.saturday.map((saturday) => {
-        const {date, dailySales} = saturday;
+        const {date, dailySales, weekDay} = saturday;
+        if (weekDay === "Saturday") {
         return(
             <tr>
             <td key={saturday}>
@@ -239,6 +157,7 @@ Saturday() {
             </td>
             </tr>
         )
+        }
     })
 }
 
