@@ -85,7 +85,6 @@ class AverageSales extends React.Component {
 
     LaborCost() {
         return this.state.sales.slice(0).reverse().map((sales) => {
-            //const { sales } = sales;
             var result = sales / 100;
             var labor = this.state.labor;
             return (
@@ -130,7 +129,6 @@ class AverageSales extends React.Component {
             </div>
 
         )
-        //you can only return ONE element so by using a div, its ONE element containin MANY elements(children). Use a parent to display children when limited to using one
     }
 }
 export default AverageSales;
