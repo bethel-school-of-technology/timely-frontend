@@ -4,14 +4,6 @@ import authHeader from './auth-header';
 const API_URL = 'http://localhost:8080/api/';
 
 class UserService {
-  getSales() {
-    return axios.get(API_URL + 'sales', { headers: authHeader() })
-  }
-
-  getEstimatedSales() {
-    return axios.get(API_URL + 'estimate', { headers: authHeader() })
-    .then((response) => console.log(response.data));;
-  }
 
   postSunSales(sundaySales,
     sundayDate) {

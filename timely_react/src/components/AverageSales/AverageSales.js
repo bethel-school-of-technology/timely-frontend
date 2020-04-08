@@ -1,54 +1,79 @@
 import React from 'react';
 import '../../Styles/sales.css';
+import axios from 'axios';
+import authHeader from '../../Services/auth-header';
 
 
 
 class AverageSales extends React.Component {
 
     state = {
-
+        sales: [],
         average: [
             {
-                date: "2020-14-3", dailySales: 23456,
+                 dailySales: 23456,
                 weekDay: "Sunday"
             },
             {
-                date: "2020-18-3", dailySales: 6785,
+                 dailySales: 6785,
                 weekDay: "Monday"
             },
             {
-                date: "2020-14-3", dailySales: 2345678,
+                 dailySales: 2345678,
                 weekDay: "Tuesday"
             },
             {
-                date: "2020-18-3", dailySales: 456789,
+                 dailySales: 456789,
                 weekDay: "Wednesday"
             },
             {
-                date: "2020-18-3", dailySales: 6785,
+                dailySales: 6785,
                 weekDay: "Thursday"
             },
             {
-                date: "2020-14-3", dailySales: 2345678,
+                 dailySales: 2345678,
                 weekDay: "Friday"
             },
             {
-                date: "2020-18-3", dailySales: 456789,
+                 dailySales: 456789,
                 weekDay: "Saturday"
             }
         ],
         labor: { value: 0 },
     }
 
-    Average() {
+    removeDuplicates(array) {
+        let averageArray = array.filter(function(elem, index, self) {
+           return index == self.indexOf(elem);
+        });
+        return averageArray
+       }
+
+    getEstimatedSales(){
+        return axios.get('http://localhost:8080/api/estimate', { headers: authHeader() }).then((response) => this.setState({ sales: this.removeDuplicates(response.data) }));
+    }
+    componentDidMount(){
+        this.getEstimatedSales();
+    }
+
+    Week() {
         return this.state.average.map((average) => {
-            const { date, dailySales, weekDay } = average;
+            const {  weekDay } = average;
             return (
                 <td>
                     <td key={average}>
                         <tr style={{ fontWeight: "bolder" }}>{weekDay}</tr>
-                        <tr id="date">{date}</tr>
-                        <tr id="money">${dailySales}</tr>
+                    </td>
+                </td>
+            )
+        })
+    }
+    Average() {
+        return this.state.sales.slice(0).reverse().map((sales) => {
+            return (
+                <td>
+                    <td key={sales}>
+                        <tr id="money">${sales.toFixed(2)}</tr>
                     </td>
                 </td>
             )
@@ -59,16 +84,15 @@ class AverageSales extends React.Component {
     };
 
     LaborCost() {
-        return this.state.average.map((average) => {
-            const { date, dailySales, weekDay } = average;
-            var result = dailySales / 100;
+        return this.state.sales.slice(0).reverse().map((sales) => {
+            //const { sales } = sales;
+            var result = sales / 100;
             var labor = this.state.labor;
             return (
                 <td>
-                    <td key={average}>
-                        <tr style={{ fontWeight: "bolder" }}>{weekDay}</tr>
-                        <tr id="date">{date}</tr>
-                        <tr id="money">${result * labor}</tr>
+                    <td key={sales}>
+                        <tr id="money">${((result*labor).toFixed(2))
+                        }</tr>
                     </td>
                 </td>
             )
@@ -76,13 +100,14 @@ class AverageSales extends React.Component {
     }
 
     render() {
-
+        console.log(this.state.sales);
         return (
             <div>
                 <div id="body">
                     <h1 id="title">Sales Forecast</h1>
                     <table id="sales">
                         <tbody>
+                        <tr>{this.Week()}</tr>
                             <tr>{this.Average()}</tr>
                         </tbody>
                     </table>
@@ -91,6 +116,7 @@ class AverageSales extends React.Component {
                     <h1 id="title">Estimated Labor Cost</h1>
                     <table id="sales">
                         <tbody>
+                        <tr>{this.Week()}</tr>
                             <tr>{this.LaborCost()}</tr>
                         </tbody>
                     </table>

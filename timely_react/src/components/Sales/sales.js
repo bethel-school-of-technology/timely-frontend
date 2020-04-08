@@ -39,7 +39,6 @@ class Sales extends React.Component {
         });
          }
 componentDidMount() {
-    userService.getEstimatedSales();
     this.getSales();
 }
 
@@ -53,7 +52,7 @@ Sunday() {
                 <td key={sunday}>
                 <tr style={{fontWeight: "bolder"}}>Sunday</tr>
                     <td id="date">{date}</td>
-                    <tr id="money">${dailySales}</tr>
+                    <tr id="money">${dailySales.toFixed(2)}</tr>
                 </td>
                 </tr>
             )
@@ -71,7 +70,7 @@ Monday() {
             <td key={monday}>
             <tr style={{fontWeight: "bolder"}}>Monday</tr>
                 <td id="date">{date}</td>
-                <tr id="money">${dailySales}</tr>
+                <tr id="money">${dailySales.toFixed(2)}</tr>
             </td>
             </tr>
         )
@@ -88,7 +87,7 @@ Tuesday() {
             <td key={tuesday}>
             <tr style={{fontWeight: "bolder"}}>Tuesday</tr>
                 <td id="date">{date}</td>
-                <tr id="money">${dailySales}</tr>
+                <tr id="money">${dailySales.toFixed(2)}</tr>
             </td>
             </tr>
         )
@@ -105,7 +104,7 @@ Wednesday() {
             <td key={wednesday}>
             <tr style={{fontWeight: "bolder"}}>Wednesday</tr>
                 <td id="date">{date}</td>
-                <tr id="money">${dailySales}</tr>
+                <tr id="money">${dailySales.toFixed(2)}</tr>
             </td>
             </tr>
         )
@@ -121,7 +120,7 @@ Thursday() {
             <td key={thursday}>
             <tr style={{fontWeight: "bolder"}}>Thursday</tr>
                 <td id="date">{date}</td>
-                <tr id="money">${dailySales}</tr>
+                <tr id="money">${dailySales.toFixed(2)}</tr>
             </td>
             </tr>
         )
@@ -137,7 +136,7 @@ Friday() {
             <td key={friday}>
                 <tr style={{fontWeight: "bolder"}}>Friday</tr>
                 <td id="date">{date}</td>
-                <tr id="money">${dailySales}</tr>
+                <tr id="money">${dailySales.toFixed(2)}</tr>
             </td>
             </tr>
         )
@@ -153,7 +152,7 @@ Saturday() {
             <td key={saturday}>
             <tr style={{fontWeight: "bolder"}}>Saturday</tr>
                 <td id="date">{date}</td>
-                <tr id="money">${dailySales}</tr>
+                <tr id="money">${dailySales.toFixed(2)}</tr>
             </td>
             </tr>
         )

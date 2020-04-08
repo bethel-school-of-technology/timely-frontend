@@ -43,192 +43,6 @@ class SalesForm extends React.Component {
     };
   }
 
-//if onPostSun gets an ok response, it calls onPostMon which in turn calls onPostTue, and so on
-  onPostSun = () => {
-    fetch("http://localhost:8080/sales", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      method: "POST",
-      body: JSON.stringify({
-        weekDay: "Sunday",
-        dailySales: this.state.sundaySales,
-        date: this.state.sundayDate
-      })
-    })
-      .then(res => {
-        res.headers.get("authorization")
-        if (res.ok) {
-          this.onPostMon();
-        }
-      })
-      .then(token => {
-        if (token) {
-          this.setState({ ...this.state, token: token });
-        } else {
-          this.setState({ ...this.state, error: "Unable to input sales." });
-        }
-      });
-  };
-  onPostMon = () => {
-    fetch("http://localhost:8080/sales", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      method: "POST",
-      body: JSON.stringify({
-        weekDay: "Monday",
-        dailySales: this.state.mondaySales,
-        date: this.state.mondayDate
-      })
-    })
-      .then(res => {
-        res.headers.get("authorization");
-        if (res.ok) {
-          this.onPostTue();
-        }
-      })
-      .then(token => {
-        if (token) {
-          this.setState({ ...this.state, token: token });
-        } else {
-          this.setState({ ...this.state, error: "Unable to input sales." });
-        }
-      });
-  };
-  onPostTue = () => {
-    fetch("http://localhost:8080/sales", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      method: "POST",
-      body: JSON.stringify({
-        weekDay: "Tuesday",
-        dailySales: this.state.tuesdaySales,
-        date: this.state.tuesdayDate
-      })
-    })
-      .then(res => {
-        res.headers.get("authorization");
-        if (res.ok) {
-          this.onPostWed();
-        }
-      })
-      .then(token => {
-        if (token) {
-          this.setState({ ...this.state, token: token });
-        } else {
-          this.setState({ ...this.state, error: "Unable to input sales." });
-        }
-      });
-  };
-  onPostWed = () => {
-    fetch("http://localhost:8080/sales", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      method: "POST",
-      body: JSON.stringify({
-        weekDay: "Wednesday",
-        dailySales: this.state.wednesdaySales,
-        date: this.state.wednesdayDate
-      })
-    })
-      .then(res => {
-        res.headers.get("authorization");
-        if (res.ok) {
-          this.onPostThu();
-        }
-      })
-      .then(token => {
-        if (token) {
-          this.setState({ ...this.state, token: token });
-        } else {
-          this.setState({ ...this.state, error: "Unable to input sales." });
-        }
-      });
-  };
-  onPostThu = () => {
-    fetch("http://localhost:8080/sales", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      method: "POST",
-      body: JSON.stringify({
-        weekDay: "Thursday",
-        dailySales: this.state.thursdaySales,
-        date: this.state.thursdayDate
-      })
-    })
-      .then(res => {
-        res.headers.get("authorization");
-        if (res.ok) {
-          this.onPostFri();
-        }
-      })
-      .then(token => {
-        if (token) {
-          this.setState({ ...this.state, token: token });
-        } else {
-          this.setState({ ...this.state, error: "Unable to input sales." });
-        }
-      });
-  };
-  onPostFri = () => {
-    fetch("http://localhost:8080/sales", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      method: "POST",
-      body: JSON.stringify({
-        weekDay: "Friday",
-        dailySales: this.state.fridaySales,
-        date: this.state.fridayDate
-      })
-    })
-      .then(res => {
-        res.headers.get("authorization");
-        if (res.ok) {
-          this.onPostSat();
-        }
-      })
-      .then(token => {
-        if (token) {
-          this.setState({ ...this.state, token: token });
-        } else {
-          this.setState({ ...this.state, error: "Unable to input sales." });
-        }
-      });
-  };
-  onPostSat = () => {
-    fetch("http://localhost:8080/sales", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      method: "POST",
-      body: JSON.stringify({
-        weekDay: "Saturday",
-        dailySales: this.state.saturdaySales,
-        date: this.state.saturdayDate
-      })
-    })
-      .then(res => res.headers.get("authorization"))
-      .then(token => {
-        if (token) {
-          this.setState({ ...this.state, token: token });
-        } else {
-          this.setState({ ...this.state, error: "Unable to input sales." });
-        }
-      });
-  };
-
   //onChange ties in the form values to the components state
   onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
@@ -238,30 +52,6 @@ class SalesForm extends React.Component {
   onSubmit = s => {
     s.preventDefault();
 
-    // Remove once data is confirmed to backend
-    const newSales = {
-      sundaySales: this.state.sundaySales,
-      sundayDate: this.state.sundayDate,
-
-      mondaySales: this.state.mondaySales,
-      mondayDate: this.state.mondayDate,
-
-      tuesdaySales: this.state.tuesdaySales,
-      tuesdayDate: this.state.tuesdayDate,
-
-      wednesdaySales: this.state.wednesdaySales,
-      wednesdayDate: this.state.wednesdayDate,
-
-      thursdaySales: this.state.thursdaySales,
-      thursdayDate: this.state.thursdayDate,
-
-      fridaySales: this.state.fridaySales,
-      fridayDate: this.state.fridayDate,
-
-      saturdaySales: this.state.saturdaySales,
-      saturdayDate: this.state.saturdayDate
-    };
-  console.log(newSales);
   this.form.validateAll();
   if (this.checkBtn.context._errors.length === 0) {
     UserService.postSunSales(
@@ -358,6 +148,7 @@ class SalesForm extends React.Component {
                 error={errors.mondaySales}
                 id="mondaySales"
                 type="number"
+                validations={[required]}
               />
               <Input
                 className="login-input"
@@ -367,6 +158,7 @@ class SalesForm extends React.Component {
                 error={errors.mondaydate}
                 id="mondayDate"
                 type="date"
+                validations={[required]}
               />
             </div>
            
@@ -385,6 +177,7 @@ class SalesForm extends React.Component {
                 error={errors.tuesdaySales}
                 id="tuesdaySales"
                 type="number"
+                validations={[required]}
               />
 
               <Input
@@ -395,6 +188,7 @@ class SalesForm extends React.Component {
                 error={errors.tuesdayDate}
                 id="tuesdayDate"
                 type="date"
+                validations={[required]}
               />
             </div>
            
@@ -413,6 +207,7 @@ class SalesForm extends React.Component {
                 error={errors.wednesdaySales}
                 id="wednesdaySales"
                 type="number"
+                validations={[required]}
               />
 
               <Input
@@ -423,6 +218,7 @@ class SalesForm extends React.Component {
                 error={errors.wednesdayDate}
                 id="wednesdayDate"
                 type="date"
+                validations={[required]}
               />
             </div>
            
@@ -441,6 +237,7 @@ class SalesForm extends React.Component {
                 error={errors.thursdaySales}
                 id="thursdaySales"
                 type="number"
+                validations={[required]}
               />
 
               <Input
@@ -451,6 +248,7 @@ class SalesForm extends React.Component {
                 error={errors.thursdayDate}
                 id="thursdayDate"
                 type="date"
+                validations={[required]}
               />
             </div>
             
@@ -470,6 +268,7 @@ class SalesForm extends React.Component {
                 error={errors.fridaySales}
                 id="fridaySales"
                 type="number"
+                validations={[required]}
               />
 
               <Input
@@ -480,6 +279,7 @@ class SalesForm extends React.Component {
                 error={errors.fridayDate}
                 id="fridayDate"
                 type="date"
+                validations={[required]}
               />
             </div>
             
@@ -498,6 +298,7 @@ class SalesForm extends React.Component {
                 error={errors.saturdaySales}
                 id="saturdaySales"
                 type="number"
+                validations={[required]}
               />
 
               <Input
@@ -508,6 +309,7 @@ class SalesForm extends React.Component {
                 error={errors.saturdayDate}
                 id="saturdayDate"
                 type="date"
+                validations={[required]}
               />
             </div> 
             <button 
