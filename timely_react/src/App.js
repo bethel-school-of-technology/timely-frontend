@@ -60,15 +60,7 @@ class App extends Component {
     this.setState({ sideDrawerOpen: false });
   };
 
-  // drawerToggleButton = (props) => {
-  //   return(
-  //   <button className="toggle-button" onClick={this.state.sideDrawerOpen.click}>
-  //       <div className="toggle-button__line" />
-  //       <div className="toggle-button__line" />
-  //       <div className="toggle-button__line" />
-  //   </button>
-  //   )};
-
+ 
   render() {
     const { currentUser } = this.state;
     let backdrop;
@@ -90,7 +82,7 @@ class App extends Component {
             <div>
               <header className="toolbar1">
                 <nav className="toolbar__navigation">
-                  <span className="tspan"></span>
+                 
                   <div className="toolbar__toggle-button">
                   {/*  {this.drawerToggleButton()} */}
                     
@@ -100,20 +92,20 @@ class App extends Component {
                     
                     </div>
 
-                  <span className="tspan"></span>
-                  <span className="tspan"></span>
+                   <span className="tspan"></span>
+                 {/* //code above gives space between Timely and edge of Toolbar */}
 
                   <div className="toolbar__logo">
                     <a href="/">Timely</a>
                   </div>
 
                   <span className="tspan"></span>
-
+                  {/* //code above makes some space between custom logo and Timely */}
                   <img src="./images/TML.png" alt="logo" class="image1" />
 
                   <div className="spacer" />
-
-                  <div className="toolbar_navigation-items">
+                   {/* // code above spaces the navigation links on Toolbar to the far right */}
+                  <div className="toolbar_navigation-items a">
 
                     {currentUser && (
                       <li className="nav-item">
@@ -137,12 +129,12 @@ class App extends Component {
 
                     <div>
 
-                      <li className="toolbar_navigation-items">
+                      <li className="toolbar_navigation-items a">
                         <Link to={"/profile"} >
                           {currentUser.username}
                         </Link>
                       </li>
-                      <li className="toolbar_navigation-items">
+                      <li className="toolbar_navigation-items a">
                         <a href="/landing" onClick={this.logOut}>
                           Logout
                   </a>
@@ -152,13 +144,13 @@ class App extends Component {
                   ) : (
                       <div >
 
-                        <li className="toolbar_navigation-items">
+                        <li className="toolbar_navigation-items a">
                           <Link to={"/login"} >
                             Login
                   </Link>
                         </li>
 
-                        <li className="toolbar_navigation-items">
+                        <li className="toolbar_navigation-items a">
                           <Link to={"/register"} >
                             Register
                   </Link>

@@ -43,29 +43,37 @@ a {
 
 /* // code (above) where all the items are place on Toolbar */
 
-/* //minimum with will display nothing. */
-/* //Will not have it on large screens, but will have on small screens. */
-@media (min-width: 769px) {
-  .toolbar__toggle-button {
-      display: none;
-  }
-}
 
-/* //below this mark display to none.  They will only show on desktop. */
-@media (max-width: 768px) {
-  .toolbar_navigation-items {
-      display: none;
-  }
-}
 
-.toolbar_navigation-items {
+#toolbar_navigation-items {
   padding: 0 1rem;
   float: left;
   font-size: 1.5rem;
   color: #84f0e1;
 }
 
+.toolbar_navigation-items li {
+  padding: 0 1rem;
+  float: left;
+  font-size: 1.5rem;
+  color: #84f0e1;
+}
 
+.toolbar_navigation-items a {
+  color: #84f0e1;
+  text-decoration: none;
+  display: flex;
+}
+
+.toolbar__logo a:hover,
+.toolbar__logo a:active {
+    color: white;
+}
+
+.toolbar_navigation-items a:hover,
+.toolbar_navigation-items a:active {
+    color: white;
+}
 
 
 html {
@@ -106,7 +114,7 @@ html {
 .spacer {
   flex: 1;
 }
-
+   {/* // code above spaces the navigation links on Toolbar to the far right */}
 
 .image1 {
   max-width: 3.8em;
@@ -131,7 +139,6 @@ html {
   border: #00baa5;
   display: inline-flex;
   grid-template-columns: 2fr 2fr;
-  
   height: 50vh;
   padding: 45px px;
 }
@@ -174,3 +181,17 @@ label {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* //minimum with will display nothing. */
+/* //Will not have it on large screens, but will have on small screens. */
+@media (min-width: 769px) {
+  .toolbar__toggle-button {
+      display: none;
+  }
+}
+
+/* //below this mark display to none.  They will only show on larger size. */
+@media (max-width: 768px) {
+  .toolbar_navigation-items {
+      display: none;
+  }
+}
