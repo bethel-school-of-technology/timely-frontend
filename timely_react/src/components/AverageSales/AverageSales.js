@@ -36,42 +36,75 @@ class AverageSales extends React.Component {
                 date: "2020-18-3", dailySales: 456789,
                 weekDay: "Saturday"
             }
-        ]
+        ],
+        labor: { value: 0 },
     }
 
-Average() {
+    Average() {
         return this.state.average.map((average) => {
-            const {date, dailySales, weekDay} = average;
-            return(
+            const { date, dailySales, weekDay } = average;
+            return (
                 <td>
-                <td key={average}>
-                <tr style={{fontWeight: "bolder"}}>{weekDay}</tr>
-                    <tr id="date">{date}</tr>
-                    <tr id="money">${dailySales}</tr>
+                    <td key={average}>
+                        <tr style={{ fontWeight: "bolder" }}>{weekDay}</tr>
+                        <tr id="date">{date}</tr>
+                        <tr id="money">${dailySales}</tr>
+                    </td>
                 </td>
+            )
+        })
+    }
+    updateInput = e => {
+        this.setState({ [e.target.id]: e.target.value });
+    };
+
+    LaborCost() {
+        return this.state.average.map((average) => {
+            const { date, dailySales, weekDay } = average;
+            var result = dailySales / 100;
+            var labor = this.state.labor;
+            return (
+                <td>
+                    <td key={average}>
+                        <tr style={{ fontWeight: "bolder" }}>{weekDay}</tr>
+                        <tr id="date">{date}</tr>
+                        <tr id="money">${result * labor}</tr>
+                    </td>
                 </td>
             )
         })
     }
 
-
     render() {
-       
-    return (
-        <div id="body"> 
-        <br></br> <br></br><br></br>
-         <br></br><br></br>
-        <br></br><br></br>
-           <h1 style={{ color: "#009688" }}>Sales Forecast</h1>
-           <br></br><br></br>
-            <table id="sales">
-                <tbody>
-                    <td>{this.Average()}</td>
-                </tbody>
-            </table>
-        </div>
-    )
-    //you can only return ONE element so by using a div, its ONE element containin MANY elements(children). Use a parent to display children when limited to using one
-}
+
+        return (
+            <div>
+                <div id="body">
+                    <h1 id="title">Sales Forecast</h1>
+                    <table id="sales">
+                        <tbody>
+                            <tr>{this.Average()}</tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="body">
+                    <h1 id="title">Estimated Labor Cost</h1>
+                    <table id="sales">
+                        <tbody>
+                            <tr>{this.LaborCost()}</tr>
+                        </tbody>
+                    </table>
+                    <input type="number" placeholder="Labor Cost Percentage"
+                        value={this.state.labor}
+                        id="labor"
+                        onChange={this.updateInput} />
+                    <br /><br />
+
+                </div>
+            </div>
+
+        )
+        //you can only return ONE element so by using a div, its ONE element containin MANY elements(children). Use a parent to display children when limited to using one
+    }
 }
 export default AverageSales;

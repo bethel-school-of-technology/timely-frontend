@@ -29,22 +29,51 @@ a {
 }
 /* // the code (above) also for items within the Toolbar */
 
+
+
+
 .toolbar__navigation {
   display: flex;
   height: 100%;
   align-items: center;
-  padding: 2 1rem;
+  padding: 1 1rem;
   list-style: none;
   
 }
 
 /* // code (above) where all the items are place on Toolbar */
 
+/* //minimum with will display nothing. */
+/* //Will not have it on large screens, but will have on small screens. */
+@media (min-width: 769px) {
+  .toolbar__toggle-button {
+      display: none;
+  }
+}
+
+/* //below this mark display to none.  They will only show on desktop. */
+@media (max-width: 768px) {
+  .toolbar_navigation-items {
+      display: none;
+  }
+}
+
+.toolbar_navigation-items {
+  padding: 0 1rem;
+  float: left;
+  font-size: 1.5rem;
+  color: #84f0e1;
+}
+
+
+
+
 html {
   height: 100%;
 }
 
-.toolbar {
+.toolbar1 {
+  visibility: visible;
   position: relative;
   top: 0;
   left: 0;
@@ -87,7 +116,7 @@ html {
 /* // code (above) for our custom Logo on Toolbar */
 
 .tspan {
-  padding: 0.1em;
+  padding: 0.4em;
   margin-right: 1; 
   align-items: center;
 
@@ -98,20 +127,20 @@ html {
 #main2 {
   
   background-color: white;
-  margin: 75px;
+  margin: 50px;
   border: #00baa5;
-  display: grid;
+  display: inline-flex;
   grid-template-columns: 2fr 2fr;
   
-  height: 100vh;
-  padding: 25px 2px;
+  height: 50vh;
+  padding: 45px px;
 }
 
 /* // code (above) for area paragraph is in on home/landing page */
 
 #main2 .main-text {
   color:grey;
-  font-size: 40px;
+  font-size: 45px;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -121,21 +150,22 @@ html {
 label {
   position: block;
   display: block;
-  margin-top: 40px;
+  margin-top: 15px;
   height: 100%;
+  
 }
 
 .card-container.card {
  
-  max-width: 450px !important;
-  padding: 90px 35px;
+  max-width: 420px !important;
+  padding: 70px 35px;
 }
 
 .card {
   background-color: #f7f7f7;
   padding: 20px 25px 30px;
   margin: 0 auto 25px;
-  margin-top: 50px;
+  margin-top: 120px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
@@ -144,12 +174,3 @@ label {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* .profile-img-card {
-  width: 96px;
-  height: 96px;
-  margin: 0 auto 10px;
-  display: block;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-} */

@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 // import ReactDOM from 'react-dom';
-import Toolbar from './components/Toolbar/Toolbar';
+//import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 import Routes from './Routes/Routes';
 import history from './Services/Services';
+
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import AuthService from "./Services/auth.service";
@@ -19,21 +20,11 @@ import SalesPage from "./Pages/Sales/Sales";
 import AddSales from "./Pages/AddSales/AddSales";
 import Profile from "./Pages/Profile/ProfilePage";
 import DrawerToggleButton from './components/SideDrawer/DrawerToggleButton';
-{/* <Route path="/" exact component={Landing} />
-<Route exact path="/login" component={Login} /> */}
-
-
-// <Route path="/home" component={HomePage} />
-// <Route path="/sales" component={SalesPage} />
-// <Route path="/addSales" component={AddSales} />
-// <Route exact path="/register" component={Register} />
-// <Route exact path="/profile" component={Profile} />
-// <Route component={Login} />
-
 
 
 
 class App extends Component {
+
   constructor(props) {
     super(props);
     this.logOut = this.logOut.bind(this);
@@ -53,7 +44,11 @@ class App extends Component {
       });
     }
   }
- 
+
+  logOut() {
+    AuthService.logout();
+  }
+
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {
       return { sideDrawerOpen: !prevState.sideDrawerOpen };
@@ -65,11 +60,14 @@ class App extends Component {
     this.setState({ sideDrawerOpen: false });
   };
 
-
-
-  logOut() {
-    AuthService.logout();
-  }
+  // drawerToggleButton = (props) => {
+  //   return(
+  //   <button className="toggle-button" onClick={this.state.sideDrawerOpen.click}>
+  //       <div className="toggle-button__line" />
+  //       <div className="toggle-button__line" />
+  //       <div className="toggle-button__line" />
+  //   </button>
+  //   )};
 
   render() {
     const { currentUser } = this.state;
@@ -80,25 +78,31 @@ class App extends Component {
     }
 
     return (
-     
-          <div style={{ height: '100%' }}>
-         <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
-          <SideDrawer show={this.state.sideDrawerOpen} />
-          {backdrop}
-        {/* <div style={{ height: '100%' }}> */}
-          {/* <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
-          <SideDrawer show={this.state.sideDrawerOpen} />
-          {backdrop} */}
-       
+
+      <div style={{ height: '100%' }}>
+        {/* <Toolbar drawerClickHandler={this.drawerToggleClickHandler} /> */}
+        <SideDrawer show={this.state.sideDrawerOpen} />
+        {backdrop}
+
 
         <div>
           <BrowserRouter>
             <div>
-              <header className="toolbar">
+              <header className="toolbar1">
                 <nav className="toolbar__navigation">
-                <div className="toolbar__toggle-button">
-          <DrawerToggleButton click={this.props.drawerClickHandler} />
-        </div>
+                  <span className="tspan"></span>
+                  <div className="toolbar__toggle-button">
+                  {/*  {this.drawerToggleButton()} */}
+                    
+                      
+                   <DrawerToggleButton click={this.drawerToggleClickHandler} />
+
+                    
+                    </div>
+
+                  <span className="tspan"></span>
+                  <span className="tspan"></span>
+
                   <div className="toolbar__logo">
                     <a href="/">Timely</a>
                   </div>
@@ -109,7 +113,7 @@ class App extends Component {
 
                   <div className="spacer" />
 
-                  <div className="navbar-nav mr-auto">
+                  <div className="toolbar_navigation-items">
 
                     {currentUser && (
                       <li className="nav-item">
@@ -130,14 +134,15 @@ class App extends Component {
                   </div>
 
                   {currentUser ? (
+
                     <div>
 
-                      <li className="nav-item">
+                      <li className="toolbar_navigation-items">
                         <Link to={"/profile"} >
                           {currentUser.username}
                         </Link>
                       </li>
-                      <li className="nav-item">
+                      <li className="toolbar_navigation-items">
                         <a href="/landing" onClick={this.logOut}>
                           Logout
                   </a>
@@ -147,21 +152,19 @@ class App extends Component {
                   ) : (
                       <div >
 
-                        <li className="nav-item">
+                        <li className="toolbar_navigation-items">
                           <Link to={"/login"} >
                             Login
                   </Link>
                         </li>
 
-                        <li className="nav-item">
+                        <li className="toolbar_navigation-items">
                           <Link to={"/register"} >
                             Register
                   </Link>
                         </li>
 
-                        {/* <Router history={history}>
-                  <Routes />
-               </Router> */}
+
                       </div>
                     )}
                 </nav>
@@ -173,8 +176,6 @@ class App extends Component {
                 <Switch>
                   <Route path={["/", "/landing"]} exact component={Landing} />
                   <Route exact path="/login" component={Login} />
-
-
                   <Route path="/home" component={HomePage} />
                   <Route path="/sales" component={SalesPage} />
                   <Route path="/addSales" component={AddSales} />

@@ -2,7 +2,8 @@ import React from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-import UserService from "../../Services/user.service"
+import UserService from "../../Services/user.service";
+
 const required = value => {
   if (!value) {
     return (
@@ -297,7 +298,8 @@ class SalesForm extends React.Component {
     render() {
         const { errors } = this.state;
         return <div className="root-container"> 
-
+           
+               
         <br></br><br></br><br></br><br></br><br></br><br></br>
         
            <h1 style={{ color: "#009688" }}>Input Weekly Sales</h1>
@@ -498,7 +500,7 @@ class SalesForm extends React.Component {
                 type="number"
               />
 
-              <input
+              <Input
                 className="login-input"
                 name="saturday"
                 onChange={this.onChange}
@@ -522,6 +524,7 @@ class SalesForm extends React.Component {
               }}
             />
           </Form>
+       
         </div>
       </div>
 };

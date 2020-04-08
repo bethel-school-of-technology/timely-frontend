@@ -6,28 +6,28 @@ import './Toolbar.css';
 
 const toolbar = props => (
   <div>
-    <header className="toolbar">
+     <header className="toolbar">
 
-      
 
-      <nav className="toolbar__navigation">
-                    {/* //the next div should not be visible on bigger screens. */}
-        <div className="toolbar__toggle-button">
+
+      <nav className="toolbar__navigation"> 
+        {/* //the next div should not be visible on bigger screens.  */}
+       <div className="toolbar__toggle-button">
           <DrawerToggleButton click={props.drawerClickHandler} />
-        </div>
-        
-          
+        </div> 
+
+
         <div className="toolbar__logo">
-          <a href="/">Timely</a>
-        </div>
+          <a href="/">TimelyACK</a>
+        </div> 
 
-        <span className="tspan"></span>
+       <span className="tspan"></span>
 
-        <img src="./images/TML.png"  alt="logo" class="image1" />
+        <img src="./images/TML.png" alt="logo" class="image1" />
 
-        <div className="spacer" />
-
-        <div className="toolbar_navigation-items">
+        <div className="spacer" /> 
+ 
+        <div className="toolbar_navigation-items"> 
 
           <ul>
             {/* <li><a href="/home">Home</a></li> */}
@@ -35,12 +35,10 @@ const toolbar = props => (
             <li><a href="/login">Login</a></li> */}
           </ul>
 
-        </div>
+       </div> 
 
       </nav>
-    </header>
-
-
+     </header> 
   </div>
 );
 

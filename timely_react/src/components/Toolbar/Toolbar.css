@@ -1,10 +1,11 @@
 .toolbar {
-    position: fixed;
+    visibility: visable;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
     background: #222;
-    height: 75px;
+    height: 65px;
     border: #00baa5;
     border-style: ridge;
     
@@ -14,15 +15,16 @@
     display: flex;
     height: 100%;
     align-items: center;
-    padding: 2 1rem;
+    padding: 1 1rem;
     list-style: none;
+    color: #84f0e1;
     
   }
 /* //spacing between hamburger icon and logo */
 
 
 .toolbar__logo {
-    margin-left: 1.0rem;
+    margin-left: 0rem;
     
 }
 
@@ -31,9 +33,15 @@
 .toolbar__logo a {
     color: #84f0e1;
     text-decoration: none;
-    font-size: 2.5rem;
+    font-size: 2.6rem;
 
 }
+
+.toolbar__logo a:hover,
+.toolbar__logo a:active {
+    color: white;
+}
+
 
 .toolbar_navigation-items ul {
     list-style: none;
@@ -49,6 +57,9 @@
     font-size: 1.5rem;
     color: #84f0e1;
 }
+
+
+
 
 .spacer {
     flex: 1;
@@ -68,8 +79,8 @@
 }
 
 .tspan {
-    padding: 0.6em;
-    margin-right: 1; 
+    padding: 0.4em;
+    margin-right: 2; 
     align-items: center;
     
      

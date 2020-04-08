@@ -13,7 +13,7 @@ render() {
          <section id="main2">
          
          <div className="main-text">
-          <span>Timely.</span>  <br></br>  where keeping track <br></br> of sales gets easier
+          <span>Timely.</span>  <br></br>  Where keeping track <br></br> of sales gets easier
          {/* <p>logo here?</p> */}
          
           </div>

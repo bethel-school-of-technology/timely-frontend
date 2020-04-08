@@ -161,11 +161,7 @@ class Registers extends Component {
     return (
       <div className="col-md-12">
         <div className="card card-container">
-          {/* <img
-            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-            alt="profile-img"
-            className="profile-img-card"
-          /> */}
+          
           <h1 style={{ textAlign: 'center', color: '#009688' }}>Register</h1>
           <Form
             onSubmit={this.handleRegister}
@@ -241,8 +237,9 @@ class Registers extends Component {
                     validations={[required, vpassword]}
                   />
                 </div>
+                <br></br>
                 <div className="form-group">
-                  <button className="btn btn-primary btn-block">Sign Up</button>
+                  <button className="btn btn-primary btn-block">Register</button>
                 </div>
               </div>
             )}
