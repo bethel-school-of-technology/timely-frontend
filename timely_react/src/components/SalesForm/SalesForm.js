@@ -39,6 +39,7 @@ class SalesForm extends React.Component {
 
       saturdaySales: "",
       saturdayDate: "",
+      message: "",
       errors: {}
     };
   }
@@ -51,6 +52,9 @@ class SalesForm extends React.Component {
   //prevent default stops re-rendering of page
   onSubmit = s => {
     s.preventDefault();
+    this.setState({
+      message: ""
+    });
 
   this.form.validateAll();
   if (this.checkBtn.context._errors.length === 0) {
@@ -81,7 +85,22 @@ class SalesForm extends React.Component {
     UserService.postSatSales(
       this.state.saturdaySales,
       this.state.saturdayDate,
-    );
+    ).then(response => {
+      this.setState({
+        message: response.data.message
+      })
+    },
+    error => {
+      const resMessage =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      this.setState({
+        message: resMessage
+      });
+    });
   };
 };
 
@@ -319,6 +338,20 @@ class SalesForm extends React.Component {
               Submit
             </button>
             <br/>
+            {this.state.message && (
+              <div className="form-group">
+                <div
+                  className={
+                    this.state.successful
+                      ? "alert alert-success"
+                      : "alert alert-danger"
+                  }
+                  role="alert"
+                >
+                  {this.state.message}
+                </div>
+              </div>
+            )}
             <CheckButton
               style={{ display: "none" }}
               ref={c => {
