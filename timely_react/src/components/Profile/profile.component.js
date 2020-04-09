@@ -20,6 +20,7 @@ class Profile extends Component {
             <strong>Welcome {currentUser.username}!</strong>
           </h3>
         </header>
+
         
         <p>
           <strong>Email:</strong>{" "}
@@ -30,6 +31,9 @@ class Profile extends Component {
           {currentUser.roles &&
             currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
         </ul>
+      
+      
+
       </div>
     );
   }

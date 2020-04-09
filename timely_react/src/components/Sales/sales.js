@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../Styles/sales.css';
-import userService from '../../Services/user.service';
 import axios from 'axios';
 import authHeader from '../../Services/auth-header'
 
