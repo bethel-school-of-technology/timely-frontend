@@ -4,7 +4,7 @@ import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import UserService from "../../Services/user.service";
 
-const required = value => {
+const required = (value) => {
   if (!value) {
     return (
       <div className="alert alert-danger" role="alert">
@@ -18,7 +18,6 @@ class SalesForm extends React.Component {
   constructor() {
     super();
     this.state = {
-
       sundaySales: "",
       sundayDate: "",
 
@@ -40,88 +39,83 @@ class SalesForm extends React.Component {
       saturdaySales: "",
       saturdayDate: "",
       message: "",
-      errors: {}
+      errors: {},
     };
   }
 
   //onChange ties in the form values to the components state
-  onChange = e => {
+  onChange = (e) => {
     this.setState({ [e.target.id]: e.target.value });
   };
 
   //prevent default stops re-rendering of page
-  onSubmit = s => {
+  onSubmit = (s) => {
     s.preventDefault();
     this.setState({
-      message: ""
+      message: "",
     });
 
-  this.form.validateAll();
-  if (this.checkBtn.context._errors.length === 0) {
-    UserService.postSunSales(
-      this.state.sundaySales,
-      this.state.sundayDate
-    );
-    UserService.postMonSales(
-      this.state.mondaySales,
-      this.state.mondayDate,
-    );
-    UserService.postTueSales(
-      this.state.tuesdaySales,
-      this.state.tuesdayDate,
-    );
-    UserService.postWedSales(
-      this.state.wednesdaySales,
-      this.state.wednesdayDate,
-    );
-    UserService.postThuSales(
-      this.state.thursdaySales,
-      this.state.thursdayDate,
-    );
-    UserService.postFriSales(
-      this.state.fridaySales,
-      this.state.fridayDate,
-    );
-    UserService.postSatSales(
-      this.state.saturdaySales,
-      this.state.saturdayDate,
-    ).then(response => {
-      this.setState({
-        message: response.data.message
-      })
-    },
-    error => {
-      const resMessage =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
-      this.setState({
-        message: resMessage
-      });
-    });
+    this.form.validateAll();
+    if (this.checkBtn.context._errors.length === 0) {
+      UserService.postSunSales(this.state.sundaySales, this.state.sundayDate);
+      UserService.postMonSales(this.state.mondaySales, this.state.mondayDate);
+      UserService.postTueSales(this.state.tuesdaySales, this.state.tuesdayDate);
+      UserService.postWedSales(
+        this.state.wednesdaySales,
+        this.state.wednesdayDate
+      );
+      UserService.postThuSales(
+        this.state.thursdaySales,
+        this.state.thursdayDate
+      );
+      UserService.postFriSales(this.state.fridaySales, this.state.fridayDate);
+      UserService.postSatSales(
+        this.state.saturdaySales,
+        this.state.saturdayDate
+      ).then(
+        (response) => {
+          this.setState({
+            message: response.data.message,
+          });
+        },
+        (error) => {
+          const resMessage =
+            (error.response &&
+              error.response.data &&
+              error.response.data.message) ||
+            error.message ||
+            error.toString();
+          this.setState({
+            message: resMessage,
+          });
+        }
+      );
+    }
   };
 
+  render() {
+    const { errors } = this.state;
+    return (
+      <div className="root-container">
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
 
-    render() {
-        const { errors } = this.state;
-        return <div className="root-container"> 
-           
-               
-        <br></br><br></br><br></br><br></br><br></br><br></br>
-        
-           <h1 style={{ color: "#009688" }}>Input Weekly Sales</h1>
-          <br></br>
-            <div className="inner-container">
-                <div className="box-header">
-                </div>
+        <h1 style={{ color: "#009688" }}>Input Weekly Sales</h1>
+        <br></br>
+        <div className="inner-container">
+          <div className="box-header"></div>
 
-                <Form onSubmit={this.onSubmit}
-                ref={c => {
-                  this.form = c;
-                }}
-                    className="box">
+          <Form
+            onSubmit={this.onSubmit}
+            ref={(c) => {
+              this.form = c;
+            }}
+            className="box"
+          >
             {
               //sunday sales
             }
@@ -151,7 +145,7 @@ class SalesForm extends React.Component {
                 validations={[required]}
               />
             </div>
-           
+
             {
               //mondays Sales
             }
@@ -180,7 +174,7 @@ class SalesForm extends React.Component {
                 validations={[required]}
               />
             </div>
-           
+
             {
               //tuesdays sales
             }
@@ -210,7 +204,7 @@ class SalesForm extends React.Component {
                 validations={[required]}
               />
             </div>
-           
+
             {
               //wednesdays sales
             }
@@ -240,7 +234,7 @@ class SalesForm extends React.Component {
                 validations={[required]}
               />
             </div>
-           
+
             {
               //thursday sales
             }
@@ -270,7 +264,7 @@ class SalesForm extends React.Component {
                 validations={[required]}
               />
             </div>
-            
+
             {
               //friday sales
             }
@@ -301,7 +295,7 @@ class SalesForm extends React.Component {
                 validations={[required]}
               />
             </div>
-            
+
             {
               //saturday sales
             }
@@ -330,14 +324,11 @@ class SalesForm extends React.Component {
                 type="date"
                 validations={[required]}
               />
-            </div> 
-            <button 
-              className="login-btn2"
-              type="submit"
-            >
+            </div>
+            <button className="login-btn2" type="submit">
               Submit
             </button>
-            <br/>
+            <br />
             {this.state.message && (
               <div className="form-group">
                 <div
@@ -354,16 +345,15 @@ class SalesForm extends React.Component {
             )}
             <CheckButton
               style={{ display: "none" }}
-              ref={c => {
+              ref={(c) => {
                 this.checkBtn = c;
               }}
             />
           </Form>
-       
         </div>
       </div>
-    </div>
-  };
+    );
+  }
 }
 
 export default SalesForm;

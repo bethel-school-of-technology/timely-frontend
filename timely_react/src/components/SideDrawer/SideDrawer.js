@@ -1,12 +1,4 @@
 import React from 'react';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
-import Landing from '../../Pages/Landing/Landing';
-import SalesPage from '../../Pages/Sales/Sales';
-import AddSales from "../../Pages/AddSales/AddSales";
-import Registers from "../../components/Register/register.component";
-import Login from "../../components/Login/login.component";
-import Profile from "../../Pages/Profile/ProfilePage";
-import HomePage from "../../Routes/links_Home";
 import './SideDrawer.css';
 import AuthService from '../../Services/auth.service';
 

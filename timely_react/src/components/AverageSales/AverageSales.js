@@ -11,31 +11,24 @@ class AverageSales extends React.Component {
         sales: [],
         average: [
             {
-                dailySales: 23456,
                 weekDay: "Sunday"
             },
             {
-                dailySales: 6785,
                 weekDay: "Monday"
             },
             {
-                dailySales: 2345678,
                 weekDay: "Tuesday"
             },
             {
-                dailySales: 456789,
                 weekDay: "Wednesday"
             },
             {
-                dailySales: 6785,
                 weekDay: "Thursday"
             },
             {
-                dailySales: 2345678,
                 weekDay: "Friday"
             },
             {
-                dailySales: 456789,
                 weekDay: "Saturday"
             }
         ],

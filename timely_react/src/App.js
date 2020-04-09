@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
-// import ReactDOM from 'react-dom';
-//import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
-import Routes from './Routes/Routes';
-import history from './Services/Services';
 import "bootstrap/dist/css/bootstrap.min.css";
 import AuthService from "./Services/auth.service";
 import Login from "./components/Login/login.component";
