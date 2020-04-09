@@ -18,7 +18,7 @@ class SalesForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      //there must be a way to create a sales holding each day of week holding values but console log wouldnt display.
+
       sundaySales: "",
       sundayDate: "",
 
@@ -102,7 +102,7 @@ class SalesForm extends React.Component {
       });
     });
   };
-};
+
 
     render() {
         const { errors } = this.state;
@@ -112,7 +112,7 @@ class SalesForm extends React.Component {
         <br></br><br></br><br></br><br></br><br></br><br></br>
         
            <h1 style={{ color: "#009688" }}>Input Weekly Sales</h1>
-        <br></br>
+          <br></br>
             <div className="inner-container">
                 <div className="box-header">
                 </div>
@@ -362,7 +362,8 @@ class SalesForm extends React.Component {
        
         </div>
       </div>
-};
-  }
-  //if this communicates with the backend, im curious with how data will transfer.
+    </div>
+  };
+}
+
 export default SalesForm;

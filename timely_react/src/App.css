@@ -8,13 +8,17 @@
   margin: 0;
   padding: 0;
   }
+/* //code (above) The * means "all elements"
+ (a universal selector), so we are setting all elements
+  to have zero margins, and zero padding, thus making them
+   look the same in all browsers. */
+
+
 
 body {
   margin: 0;
   font-family: Poppins,sans-serif;
   height: 100%;
-  /* outline-color: linear-gradient(180deg,#f05a28,#e80a89); */
-
   }
 
 a {
@@ -25,9 +29,8 @@ a {
   font-size: 1.2rem;
   padding: 0 1rem;
   float: left;
-  
-}
-/* // the code (above) also for items within the Toolbar */
+  }
+/* // the code (above) is for items placed within the Toolbar */
 
 
 
@@ -38,50 +41,38 @@ a {
   align-items: center;
   padding: 1 1rem;
   list-style: none;
-  
-}
+  }
 
-/* // code (above) where all the items are place on Toolbar */
+/* // code (above) where all the items are place on Toolbar ,  flex= left to right, and aligning the items to center, the container expands items
+to fill available free space or shriks them to prevent overflow. is the space inside your element.   Padding= top/bottom and left/right. */
 
-
-
-#toolbar_navigation-items {
-  padding: 0 1rem;
-  float: left;
-  font-size: 1.5rem;
-  color: #84f0e1;
-}
-
-.toolbar_navigation-items li {
-  padding: 0 1rem;
-  float: left;
-  font-size: 1.5rem;
-  color: #84f0e1;
-}
 
 .toolbar_navigation-items a {
   color: #84f0e1;
   text-decoration: none;
   display: flex;
 }
+/* //code (above) for the display location (next to each other) and also the color of nav items. */
+
 
 .toolbar__logo a:hover,
 .toolbar__logo a:active {
     color: white;
 }
+/* // when the toolbar logo (word Timely) is hovered over it will highlight to white. */
 
-.toolbar_navigation-items a:hover,
-.toolbar_navigation-items a:active {
-    color: white;
+
+.toolbar_navigation-items a:hover {
+  color: white;
 }
-
+/* //code above is for when toolbar navigation 
+items are hovered with cursor they turn white, and return to original color when cursor is removed. */
 
 html {
   height: 100%;
 }
 
 .toolbar1 {
-  visibility: visible;
   position: relative;
   top: 0;
   left: 0;
@@ -90,23 +81,22 @@ html {
   height: 75px;
   border: #00baa5;
   border-style: ridge;
-  
-}
+  }
+/* // code (above) for Toolbar itself positioning it in the top left corner, with no spacing, It's relative to its normal positon.  color, 
+border color and border style are given along with it's height on the page. */
 
 .toolbar__logo {
   margin-left: 0.2rem;
-  
-}
-/* //Code (above) for Our styled Logo on Toolbar */
+  }
+/* //Code (above) for Our styled Logo on Toolbar.  rem = "root em" provides a way to 
+specify lengths as fractions of the root elements font size, the font size of the <html> element*/
 
 
 .toolbar__logo a {
   color: #84f0e1;
   text-decoration: none;
   font-size: 2.7rem;
-
 }
-
 /* Code (above) for (Word) Timely on Toolbar */
 
 
@@ -114,12 +104,11 @@ html {
 .spacer {
   flex: 1;
 }
-   /* // code above spaces the navigation links on Toolbar to the far right */
+   /* // code (above) spaces the navigation links on Toolbar to the far right */
 
 .image1 {
   max-width: 3.8em;
-  align-items: bottom;
-  
+  align-items: bottom;  
 }
 /* // code (above) for our custom Logo on Toolbar */
 
@@ -127,7 +116,6 @@ html {
   padding: 0.4em;
   margin-right: 1; 
   align-items: center;
-
 }
 /* // code (above) for the space between Timely and our custom Logo on Toolbar */
 
@@ -142,7 +130,6 @@ html {
   height: 50vh;
   padding: 45px px;
 }
-
 /* // code (above) for area paragraph is in on home/landing page */
 
 #main2 .main-text {
@@ -151,7 +138,7 @@ html {
   font-weight: 700;
   line-height: 1.2;
 }
-/* //code (above) for our paragraph in home page or landing */
+/* //code (above) for our paragraph in home page/landing */
 
 
 label {
@@ -159,11 +146,10 @@ label {
   display: block;
   margin-top: 15px;
   height: 100%;
-  
-}
+  }
+ /* //code above for the login and register labels */
 
 .card-container.card {
- 
   max-width: 420px !important;
   padding: 70px 35px;
 }
@@ -180,8 +166,11 @@ label {
   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
+/* // codes above are for the place holder forms in login and register pages. */
 
-/* //minimum with will display nothing. */
+
+
+/* //code below minimum with will display nothing. */
 /* //Will not have it on large screens, but will have on small screens. */
 @media (min-width: 769px) {
   .toolbar__toggle-button {

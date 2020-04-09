@@ -12,12 +12,17 @@
     cursor: pointer;
     padding: 0;
     box-sizing: border-box;
-
 }
+/* //code (above) the background is transparent making it appear as 3 lines. The lines are Default to row so we need to make it column so that they
+will be placed on top of eachother.  Lines will stay inside the button with the box sizing of border-box.  Justify content positions the items along
+the main axis which for a column is from top to bottom, so setting it to space around gives space between the lines but also around the first and last line. */
+
 
 .toggle-button:focus {
     outline: none;
 }
+/* // code (above) there will be no line around the toggle button. */
+
 
 .toggle-button__line {
     width: 25px;
