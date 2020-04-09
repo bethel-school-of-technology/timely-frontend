@@ -71,8 +71,6 @@ $blue_theme: #8ed1f6;;
     text-align: center;
     padding: 50px;
     margin-bottom: 17px;
-    /* margin-left: 35px; */
-    /* margin-right: 35px; */
     font-family:  Montserrat, sans-serif;
     font-size: 22px;
     border-bottom: 2px solid $blue_theme;
@@ -145,7 +143,6 @@ $blue_theme: #8ed1f6;;
 
 .login-btn2 {
    padding: 9px 107px;
-   /* background-color: #417cef; */
    border: 0;
    font-size: 18px;
    border-radius: 3px;
@@ -159,7 +156,6 @@ $blue_theme: #8ed1f6;;
 
 .login-btn3 {
    padding: 2px 75px;
-   /* background-color: #417cef; */
    border: 0;
    font-size: 16px;
    border-radius: 3px;
@@ -188,7 +184,7 @@ $blue_theme: #8ed1f6;;
 .login-btn3:hover,
 .login-btn3:focus {
    background-color:  #009688;
-   // color: #acece5;
+  
 }
 
 
@@ -220,7 +216,6 @@ $blue_theme: #8ed1f6;;
 
 .Button6 {
    padding: 10px 95px;
-   /* background-color: #417cef; */
    border: 0;
    font-size: 16px;
    border-radius: 3px;
@@ -235,7 +230,6 @@ $blue_theme: #8ed1f6;;
 
 .Button7 {
    padding: 9px 118px;
-   /* background-color: #417cef; */
    border: 0;
    font-size: 18px;
    border-radius: 3px;
@@ -266,10 +260,6 @@ $blue_theme: #8ed1f6;;
    background-color: #d9f1ff;
 }
 
-.danger-error {
-    color: #e74c3c;
-    font-size: 16px;
-}
 
 //Password
 .password-state {
@@ -283,18 +273,6 @@ $blue_theme: #8ed1f6;;
     flex: 1;
     visibility: hidden;
 }
-
-// .pwd-weak {
-//     background-color: #e74c3c;
-// }
-
-// .pwd-medium {
-//     background-color: #3498db;
-// }
-
-// .pwd-strong {
-//     background-color: #2ecc71;
-// }
 
 .show {
     visibility: visible;

@@ -43,7 +43,7 @@ class UserService {
       { headers: authHeader() })
   }
   postThuSales(thursdaySales,
-  thursdayDate) {
+    thursdayDate) {
     return axios.post(API_URL + 'sales', {
       dailySales: thursdaySales,
       date: thursdayDate,

@@ -7,3 +7,5 @@
     background: rgba(0,0,0,0.3);
     z-index: 100;
  }
+ /* // Sits in the top left corner and set to fixed so you can not scroll it away.
+   z-index property specifies the stack order of an element. */

@@ -5,22 +5,19 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 55%;
+    width: 65%;
     max-width: 400px;
     z-index: 200;
     transform: translateX(-100%);
-    transition: transform 0.3s ease-out;
-    
+    transition: transform 0.3s ease-out; 
 }
+/* // code (above) side drawer styling. z-index property specifies the stack order of an element.  Translated on the x-axis
+ so to move it from the left to right.  Moving it to the left by its full width. animate change in transform property..to three seconds.   */
 
 .side-drawer.open {
     transform: translateX(0);
 }
 
-/* .sidelogo {
-    position: fixed;
-    justify-content: center;
-} */
 
 
 .side-drawer ul {
@@ -31,11 +28,14 @@
     justify-content: center;
     margin: 1.5rem;
 }
+/* //above the navigation elements are positioned below
+ eachother, and centered evenly.  The height takes the height of the surrounding container. */
 
 .side-drawer li {
-    margin: 0.5rem 0;
-    
+    margin: 0.5rem 0;    
 }
+/* //margin is top/bottom and left/right */
+
 
 .side-drawer a {
     color: black;
@@ -48,7 +48,7 @@
   color: #00baa5;  
 }
 
-/* // if at the minimum with below, then sidedrawer will display none, it will not show. */
+/* //below code means if at the minimum with below, then sidedrawer will display none, it will not show. */
 @media (min-width: 769px) {
     .side-drawer {
         display: none;

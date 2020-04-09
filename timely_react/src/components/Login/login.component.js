@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-
 import AuthService from "../../Services/auth.service";
 
 const required = value => {
@@ -15,7 +14,7 @@ const required = value => {
   }
 };
 
- class Login extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
     this.handleLogin = this.handleLogin.bind(this);
@@ -83,8 +82,8 @@ const required = value => {
     return (
       <div className="col-md-12">
         <div className="card card-container">
-          
-        <h1 style={{ textAlign: 'center', color: '#009688' }}>Login</h1>
+
+          <h1 style={{ textAlign: 'center', color: '#009688' }}>Login</h1>
           <Form
             onSubmit={this.handleLogin}
             ref={c => {
@@ -114,7 +113,7 @@ const required = value => {
                 validations={[required]}
               />
             </div>
-              <br></br>
+            <br></br>
             <div className="form-group">
               <button
                 className="btn btn-primary btn-block"

@@ -161,7 +161,7 @@ class Registers extends Component {
     return (
       <div className="col-md-12">
         <div className="card card-container">
-          
+
           <h1 style={{ textAlign: 'center', color: '#009688' }}>Register</h1>
           <Form
             onSubmit={this.handleRegister}

@@ -7,10 +7,8 @@ import Registers from "../../components/Register/register.component";
 import Login from "../../components/Login/login.component";
 import Profile from "../../Pages/Profile/ProfilePage";
 import HomePage from "../../Routes/links_Home";
-
 import './SideDrawer.css';
 import AuthService from '../../Services/auth.service';
-
 
 class SideDrawer extends React.Component {
     constructor(props) {
@@ -40,58 +38,59 @@ class SideDrawer extends React.Component {
             drawerClasses = 'side-drawer open';
         }
         return (
-                <nav className={drawerClasses}>
+            
+            <nav className={drawerClasses}>
 
-                    <ul>
-                        {currentUser && (
-                            <li>
+                <ul>
+                    {currentUser && (
+                        <li>
                             <a href="/sales" >
                                 Sales
-</a>
+                            </a>
                         </li>
-                        )}
+                    )}
 
-                        {currentUser && (
+                    {currentUser && (
+                        <li>
+                            <a href="/addSales">
+                                Input Sales
+                            </a>
+                        </li>
+                    )}
+                    {currentUser ? (
+                        <div>
+
                             <li>
-                                <a href="/addSales">
-                                    Input Sales
-                    </a>
+                                <a href="/profile" >
+                                    {currentUser.username}
+                                </a>
                             </li>
-                        )}
-                        {currentUser ? (
+                            <li>
+                                <a href="/landing" onClick={this.logOut}>
+                                    Logout
+                                </a>
+                            </li>
+                        </div>
+
+                    ) : (
                             <div>
 
-<li>
-                                        <a href="/profile" >
-                                            {currentUser.username}
-</a>
-                                    </li>
                                 <li>
-                                    <a href="/landing" onClick={this.logOut}>
-                                        Logout
-</a>
+                                    <a href="/login" >
+                                        Login
+                                    </a>
                                 </li>
-                                </div>
 
-                        ) : (
-                            <div>
+                                <li>
+                                    <a href="/register" >
+                                        Register
+                                    </a>
+                                </li>
+                            </div>)}
 
-<li>
-                                        <a href="/login" >
-                                            Login
-</a>
-                                    </li>
+                </ul>
 
-                                    <li>
-                                        <a href="/register" >
-                                            Register
-</a>
-                                    </li>
-                                    </div>)}
-
-                    </ul>
-                    
-                </nav>
+            </nav>
         );
     }
 };
